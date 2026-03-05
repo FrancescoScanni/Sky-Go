@@ -1,0 +1,121 @@
+{
+  "bands": [
+
+    {
+      "id": 1,
+      "bandname": "Lorna Shore",
+      "album": {
+        "title": "Pain Remains",
+        "year": 2022,
+        "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNMbq3wedfhMlViUYg3ByZer5o4sr9rPxWFg&s",
+        "yt": "https://www.youtube.com/watch?v=8VV7R_sD9f4",
+        "tracks": [
+          "Sun//Eater",
+          "Pain Remains I: Dancing Like Flames",
+          "Pain Remains II: After All I've Done, I'll Disappear",
+          "Pain Remains III: In a Sea of Fire",
+          "Cursed to Die",
+          "Of the Abyss",
+          "The Checkmate"
+        ]
+      }
+    },
+
+    {
+      "id": 2,
+      "bandname": "Slipknot",
+      "album": {
+        "title": "Iowa",
+        "year": 2001,
+        "cover": "https://m.media-amazon.com/images/I/61q6Tw0hplL._UF1000,1000_QL80_.jpg",
+        "yt": "https://www.youtube.com/watch?v=lgni6VnGFwA",
+        "tracks": [
+          "People = Shit",
+          "Disasterpiece",
+          "My Plague",
+          "Everything Ends",
+          "The Heretic Anthem",
+          "Metabolic",
+          "Liberate",
+          "Opium of the People",
+          "Gently",
+          "Prosthetics",
+          "No Life",
+          "Diluted",
+          "Sic",
+          "Eeyore"
+        ]
+      }
+    },
+
+    {
+      "id": 3,
+      "bandname": "Slaughter to Prevail",
+      "album": {
+        "title": "Kostolom",
+        "year": 2021,
+        "cover": "https://www.emp-online.it/dw/image/v2/BBQV_PRD/on/demandware.static/-/Sites-master-emp/default/dw773f350d/images/5/0/9/6/509622.jpg?sfrm=png",
+        "yt": "https://www.youtube.com/watch?v=3_k0R_zHWZg",
+        "tracks": [
+          "Baba Yaga",
+          "Agony",
+          "Demon",
+          "Zavali Ebalo",
+          "No One",
+          "Cursed",
+          "The Bridge",
+          "Kostolom"
+        ]
+      }
+    },
+
+    {
+  "id": 4,
+  "bandname": "Suicide Silence",
+  "album": {
+    "title": "The Cleansing",
+    "year": 2007,
+    "cover": "https://www.emp-online.it/dw/image/v2/BBQV_PRD/on/demandware.static/-/Sites-master-emp/default/dw4a41e739/images/3/2/7/7/327735-emp.jpg?sw=1000&sh=800&sm=fit&sfrm=png",
+    "yt": "https://www.youtube.com/watch?v=D_f_7M9m8kY",
+    "tracks": [
+      "Revelations (Intro)",
+      "Unanswered",
+      "Hands of a Killer",
+      "The Price of Beauty",
+      "The Fallen",
+      "No Pity for a Coward",
+      "The Disease",
+      "Bludgeoned to Death",
+      "Girl of Glass",
+      "In a Photograph",
+      "Eyes Sewn Shut",
+      "Green Monster",
+      "Destruction of a Statue"
+    ]
+  }
+},
+
+  {
+  "id": 5,
+  "bandname": "Immortal Disfigurement",
+  "album": {
+    "title": "Hell Is Right In Front Of Us",
+    "year": 2024,
+    "cover": "https://i.scdn.co/image/ab67616d00001e02d6cc7178ee587388fe54a515",
+    "yt": "https://www.youtube.com/watch?v=Fj-PBy474kQ",
+    "tracks": [
+      "I’m Not Dead Yet",
+      "Dragged Through the Hell",
+      "The Art of Destruction",
+      "Hell Is Right In Front Of Us",
+      "King",
+      "There Is No Hope",
+      "Force-Fed Through a Tube",
+      "Aftermath",
+      "Your Law Is Not Mine",
+      "Forever Burn"
+    ]
+    }
+  }
+]
+}

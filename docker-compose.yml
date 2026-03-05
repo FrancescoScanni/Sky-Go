@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  php:
+    build: .
+    container_name: php-cli-server
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./src:/app        # Volume nominato montato su /app
+    restart: unless-stopped
