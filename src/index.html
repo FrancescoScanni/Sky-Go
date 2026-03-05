@@ -3,55 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Band metal</title>
+    <title>Sky&Go - Prenota e Acquista voli </title>
 </head>
 <body>
-
-    <div>
-        <select name="Seleziona una band" onchange="showBand(this.value)">
-            <option value="select">Seleziona band metal spaccona</option>
-            <option value="1">Lorna Shore</option>
-            <option value="2">Slipknot</option>
-            <option value="3">Slaughtr to prevail</option>
-            <option value="4">Suicide Silence</option>
-            <option value="5">Immortal Disfigurement</option>
-        </select>
-    </div> 
-    <br>
-
-    <div id="text"></div>
-
-    <a href="addBand.html">Aggiungi altre band</a>
-
-
-
-
-
-
-    <script>
+    <div class="hero1">
         
-        async function showBand(str) {
-            const text = document.getElementById("text");
-            
-            if (str === "") {
-                text.innerHTML = "";
-                return;
-            }
-
-            try {
-                const response = await fetch("getBand.php?band="+str);
-                
-                if (!response.ok) {
-                throw new Error("HTTP error! Status: ${response.status}");
-                }
-
-                const data = await response.text();
-                text.innerHTML = data;
-            } catch (error) {
-                console.error("Errore nella richiesta:", error);
-                text.innerHTML = "Errore nel caricamento dei dati.";
-            }
-        }
-    </script>
+    </div>
+    
 </body>
 </html>
