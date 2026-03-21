@@ -1,14 +1,6 @@
-# Usa PHP CLI 8.2 come base
-FROM php:8.2-cli
+FROM php:8.2-apache
 
-# Imposta la directory di lavoro
-WORKDIR /app
+RUN docker-php-ext-install pdo pdo_mysql mysqli
+RUN a2enmod rewrite
 
-# Copia i file iniziali
-COPY . .
-
-# Espone la porta 8000 (il server interno di PHP)
-EXPOSE 8000
-
-# Avvia il server interno PHP
-CMD ["php", "-S", "0.0.0.0:8000", "-t", "."]
+WORKDIR /var/www/html
