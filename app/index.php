@@ -1,16 +1,305 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sky&Go - Prenota e Acquista voli </title>
-
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
-    <div class="hero1">
-        
-    </div>
+    <title>Sky&GO - Clone</title>
     
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="static/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandPrimary: '#C48B7D', /* Il colore salmone/pesca dei bottoni */
+                        searchBg: '#F3F5F6',     /* Il grigio chiarissimo del box di ricerca */
+                        inputBg: '#E4EBEC'       /* Il grigio degli input field */
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+</head>
+
+<body class="index">
+    
+    <div class="absolute inset-0 bg-black/20"></div>
+
+    <div class="relative w-full h-full flex flex-col justify-between pt-6 pb-12 px-4 md:px-12">
+
+        <!--Navbar / header-->
+        <nav class="w-full max-w-7xl mx-auto bg-white/30 backdrop-blur-md rounded-2xl px-8 py-4 flex justify-between items-center shadow-sm">
+            <div class="text-white text-3xl font-bold tracking-wider drop-shadow-md">Sky&GO</div>
+            
+            <!--Menu navbar-->
+            <div class="hidden md:flex space-x-10 text-gray-800 font-semibold text-sm">
+                <a href="#titoli" class="hover:text-brandPrimary transition">Home</a>
+                <a href="#hero2" class="hover:text-brandPrimary transition">Info</a>
+                <a href="pages/registra.php" class="hover:text-brandPrimary transition">Logs</a>
+                <a href="#footer" class="hover:text-brandPrimary transition">Contatti</a>
+            </div>
+            
+            <div class="flex items-center space-x-6 text-sm font-semibold text-gray-800">
+                <a href="pages/accedi.php" class="hover:text-brandPrimary transition">Accedi</a>
+                <a href="pages/registra.php" class="bg-brandPrimary hover:bg-opacity-90 text-white px-6 py-2.5 rounded-lg transition shadow-md">Iscriviti</a>
+            </div>
+        </nav>
+
+        <!--Titoli e banner-->
+        <div id="titoli" class="flex flex-col items-center justify-center text-center mt-12 md:mt-0 flex-grow">
+            <h1 class="text-4xl md:text-5xl lg:text-[54px] text-white font-bold mb-6 max-w-4xl leading-tight drop-shadow-lg" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
+                Sky&Go: trova facilmente voli economici e parti quando vuoi.
+            </h1>
+            <p class="text-white text-base md:text-lg max-w-3xl drop-shadow-md font-medium" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">
+                Sky&Go è una piattaforma pensata per rendere la ricerca di voli economici semplice e veloce. Con pochi passaggi puoi confrontare diverse offerte. L'obiettivo è aiutarti a viaggiare di più, scegliendo il volo giusto al momento giusto e al miglior prezzo disponibile.
+            </p>
+        </div>
+
+        <div class="w-full max-w-6xl mx-auto relative">
+            
+            <div class="bg-searchBg rounded-r-3xl rounded-bl-3xl p-6 md:p-8 shadow-2xl relative">
+                
+                <div class="bg-searchBg absolute -top-16 left-0 rounded-t-3xl  p-3 flex space-x-2">
+                    <button class="bg-brandPrimary text-white flex items-center space-x-2 px-6 py-3 rounded-xl font-medium shadow-md">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Aeroporti</span>
+                    </button>
+                    <button class="text-gray-600 hover:bg-gray-200 flex items-center space-x-2 px-6 py-3 rounded-xl font-medium transition">
+                        <i class="fa-solid fa-plane"></i>
+                        <span>Voli</span>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6 mt-4 md:mt-0 items-end divide-y md:divide-y-0 md:divide-x divide-gray-300">
+                    
+                    <div class="flex flex-col space-y-2 pr-0 md:pr-4">
+                        <label class="text-gray-800 font-bold text-sm flex items-center justify-between">
+                            Destinazioni <i class="fa-solid fa-chevron-down text-xs text-gray-500"></i>
+                        </label>
+                        <input type="text" placeholder="Where Are You Going?" class="w-full bg-inputBg text-gray-700 text-sm px-4 py-3 rounded-lg outline-none focus:ring-2 focus:ring-brandPrimary transition placeholder-gray-400">
+                    </div>
+
+                    <div class="flex flex-col space-y-2 px-0 md:px-4 pt-4 md:pt-0">
+                        <label class="text-gray-800 font-bold text-sm">Partenza</label>
+                        <div class="relative w-full">
+                            <input type="text" placeholder="Choose Dates" class="w-full bg-inputBg text-gray-700 text-sm px-4 py-3 rounded-lg outline-none focus:ring-2 focus:ring-brandPrimary transition placeholder-gray-400">
+                            <i class="fa-regular fa-calendar absolute right-4 top-1/2 transform -translate-y-1/2 text-brandPrimary"></i>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col space-y-2 px-0 md:px-4 pt-4 md:pt-0">
+                        <label class="text-gray-800 font-bold text-sm">Ritorno</label>
+                        <div class="relative w-full">
+                            <input type="text" placeholder="Choose Dates" class="w-full bg-inputBg text-gray-700 text-sm px-4 py-3 rounded-lg outline-none focus:ring-2 focus:ring-brandPrimary transition placeholder-gray-400">
+                            <i class="fa-regular fa-calendar absolute right-4 top-1/2 transform -translate-y-1/2 text-brandPrimary"></i>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col space-y-2 pl-0 md:pl-4 pt-4 md:pt-0">
+                        <label class="text-gray-800 font-bold text-sm flex items-center justify-between">
+                            Viaggiatori <i class="fa-solid fa-chevron-down text-xs text-gray-500"></i>
+                        </label>
+                        <div class="flex space-x-3">
+                            <input type="text" placeholder="Add Gust" class="w-full bg-inputBg text-gray-700 text-sm px-4 py-3 rounded-lg outline-none focus:ring-2 focus:ring-brandPrimary transition placeholder-gray-400">
+                            <button class="bg-brandPrimary hover:bg-opacity-90 text-white whitespace-nowrap px-6 py-3 rounded-lg font-medium transition shadow-md flex items-center space-x-2">
+                                <span>Cerca Opzioni</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!--Hero intermedio / Perchè sceliere noi-->
+    <div id="hero2" class="w-full bg-white text-slate-800">
+        <div class="max-w-7xl mx-auto px-6 py-20 flex flex-col lg:flex-row items-center gap-16 lg:gap-24 overflow-hidden">
+            
+            <div class="relative w-full max-w-[420px] shrink-0 mx-auto lg:mx-0">
+                
+                <img src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Paesaggio" class="w-full h-[480px] object-cover rounded-[32px] shadow-sm">
+
+                <div class="absolute bottom-8 -left-4 md:-left-8 bg-white px-5 py-2.5 rounded-full shadow-lg flex items-center space-x-2">
+                    <i class="fa-solid fa-star text-yellow-400 text-lg"></i>
+                    <span class="font-bold text-textDark text-lg">4.92</span>
+                </div>
+
+                <div class="absolute top-12 -right-8 md:-right-16 bg-white p-3 rounded-[24px] shadow-2xl w-[260px]">
+                    
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Stanza" class="w-full h-36 object-cover rounded-[16px]">
+                        <button class="absolute top-3 right-3 text-gray-700 hover:text-red-500 transition">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                    </div>
+
+                    <div class="pt-3 px-1">
+                        <div class="flex justify-between items-center mb-1">
+                            <h4 class="font-bold text-textDark text-sm">Suggerimento Statico*</h4>
+                            <div class="flex items-center space-x-1">
+                                <i class="fa-solid fa-star text-textDark text-[10px]"></i>
+                                <span class="font-bold text-textDark text-xs">4.92</span>
+                            </div>
+                        </div>
+                        
+                        <p class="text-[10px] text-textGray leading-tight mb-3">
+                            Voluptatibus Nemo Amet Voluptatem Quia Ipsa Eum. Est Ut Voluptas.
+                        </p>
+
+                        <div class="border-t border-dashed border-gray-300 my-3"></div>
+
+                        <div class="flex justify-between items-center">
+                            <div class="font-bold text-textDark text-sm">
+                                $139.00 <span class="font-normal text-[10px] text-textGray">Night</span>
+                            </div>
+                            <div class="flex items-center space-x-1 text-textGray">
+                                <i class="fa-solid fa-location-dot text-[10px] text-brandPrimary"></i>
+                                <span class="text-[11px] font-medium">India</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full lg:flex-1 flex flex-col space-y-6 mt-12 lg:mt-0">
+                
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-textDark mb-4 tracking-tight">Perchè Scegliere Noi</h2>
+                    <p class="text-textGray font-medium leading-relaxed max-w-lg">
+                        Scopri Una Piattaforma Pensata Per Rendere Ogni Viaggio Più Semplice, Veloce E Conveniente, Con Le Migliori Offerte A Portata Di Click.
+                    </p>
+                </div>
+
+                <ul class="space-y-5 py-4">
+                    <li class="flex items-center space-x-4">
+                        <div class="w-3.5 h-3.5 bg-brandPrimary transform rotate-45 shrink-0 rounded-[2px]"></div>
+                        <span class="font-bold text-textDark text-sm md:text-base">Confronto Rapido Delle Offerte</span>
+                    </li>
+                    <li class="flex items-center space-x-4">
+                        <div class="w-3.5 h-3.5 bg-brandPrimary transform rotate-45 shrink-0 rounded-[2px]"></div>
+                        <span class="font-bold text-textDark text-sm md:text-base">Prezzi Competitivi E Accessibili</span>
+                    </li>
+                    <li class="flex items-center space-x-4">
+                        <div class="w-3.5 h-3.5 bg-brandPrimary transform rotate-45 shrink-0 rounded-[2px]"></div>
+                        <span class="font-bold text-textDark text-sm md:text-base">Ampia Scelta Di Destinazioni Oltre I Confini</span>
+                    </li>
+                    <li class="flex items-center space-x-4">
+                        <div class="w-3.5 h-3.5 bg-brandPrimary transform rotate-45 shrink-0 rounded-[2px]"></div>
+                        <span class="font-bold text-textDark text-sm md:text-base">Prenotazioni Sicure E Tracciate</span>
+                    </li>
+                </ul>
+
+                <p class="text-textGray font-medium leading-relaxed max-w-lg">
+                    Un Unico Posto Dove Confrontare Offerte, Scegliere La Soluzione Perfetta E Prenotare Il Tuo Prossimo Viaggio In Modo Pratico E Senza Stress. 
+                    <i class="fa-solid fa-plane text-brandPrimary ml-1 transform -rotate-45"></i>
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!--Footer di fine pagina-->
+    <footer id="footer" class="w-full bg-[#1A1C23] text-white pt-16 pb-8 font-sans">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 mb-16">
+                
+                <div class="lg:col-span-3 flex flex-col space-y-6">
+                    <div>
+                        <div class="border-[3px] border-white inline-block px-2 py-0.5">
+                            <span class="font-bold text-3xl tracking-widest leading-none">LIFT</span>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-400 text-sm leading-relaxed pr-4">
+                        Hello, we are Lift Media. Our goal is to translate the positive effects from revolutionizing how companies engage with their clients & their team.
+                    </p>
+                    
+                    <div class="flex space-x-3">
+                        <a href="#" class="w-10 h-10 rounded-full border border-gray-600 flex items-center justify-center text-gray-300 hover:bg-white hover:text-[#1A1C23] transition duration-300">
+                            <i class="fa-brands fa-linkedin-in text-sm"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full border border-gray-600 flex items-center justify-center text-gray-300 hover:bg-white hover:text-[#1A1C23] transition duration-300">
+                            <i class="fa-brands fa-facebook-f text-sm"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full border border-gray-600 flex items-center justify-center text-gray-300 hover:bg-white hover:text-[#1A1C23] transition duration-300">
+                            <i class="fa-brands fa-twitter text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-2">
+                    <h4 class="font-bold text-white mb-6">Product</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="text-gray-400 text-sm hover:text-white transition">About</a></li>
+                        <li><a href="#" class="text-gray-400 text-sm hover:text-white transition">Career</a></li>
+                        <li><a href="#" class="text-gray-400 text-sm hover:text-white transition">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 text-sm hover:text-white transition">Special Offers</a></li>
+                    </ul>
+                </div>
+
+                <div class="lg:col-span-2">
+                    <h4 class="font-bold text-white mb-6">Help</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="text-gray-400 text-sm hover:text-white transition">FAQ</a></li>
+                        <li><a href="#" class="text-gray-400 text-sm hover:text-white transition">Help Center</a></li>
+                        <li><a href="#" class="text-gray-400 text-sm hover:text-white transition">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="lg:col-span-2">
+                    <h4 class="font-bold text-white mb-6">Partner</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="text-gray-400 text-sm hover:text-white transition">Partner Hub</a></li>
+                        <li><a href="#" class="text-gray-400 text-sm hover:text-white transition">Affiliates</a></li>
+                        <li><a href="#" class="text-gray-400 text-sm hover:text-white transition">Advertise</a></li>
+                    </ul>
+                </div>
+
+                <div class="lg:col-span-3">
+                    <div class="bg-[#2A2C34] rounded-2xl p-6 shadow-lg">
+                        <h4 class="font-bold text-white mb-4">Subscribe</h4>
+                        
+                        <div class="flex w-full mb-4">
+                            <input type="email" placeholder="Email address" class="w-full bg-white text-gray-800 text-sm px-4 py-2.5 rounded-l-md outline-none focus:ring-2 focus:ring-brandPrimary">
+                            <button class="bg-brandPrimary hover:bg-opacity-90 transition text-white px-4 py-2.5 rounded-r-md flex items-center justify-center">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                        
+                        <p class="text-[11px] text-gray-400 leading-relaxed">
+                            Hello, we are Lift Media. Our goal is to translate the positive effects from revolutionizing how companies engage with their clients & their team.
+                        </p>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="border-t border-gray-700 pt-8 flex justify-center items-center">
+                <div class="flex space-x-8 text-sm font-medium">
+                    <a href="#" class="text-white hover:text-gray-300 transition">Terms</a>
+                    <a href="#" class="text-white hover:text-gray-300 transition">Privacy</a>
+                    <a href="#" class="text-white hover:text-gray-300 transition">Cookies</a>
+                </div>
+            </div>
+            
+        </div>
+    </footer>
+
+
+
 </body>
 </html>

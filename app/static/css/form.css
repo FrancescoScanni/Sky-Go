@@ -1,0 +1,18 @@
+/*Stile dei form*/
+
+input.custom {
+  width: 100%;
+  color: #374151;
+  font-size: 0.875rem;
+  padding-left: 2.75rem;
+  padding-right: 1rem;
+  padding-top: 0.875rem;
+  padding-bottom: 0.875rem;
+  border-radius: 1rem;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+}
+
+input.custom:focus {
+  box-shadow: 0 0 0 2px #0ea5e9;
+}

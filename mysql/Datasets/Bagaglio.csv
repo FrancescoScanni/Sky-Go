@@ -1,0 +1,201 @@
+ID,Peso,Entità,Fragile,Descrizione,IDPrenotazione,IDAssicurazione
+1,11.0,a mano,False,Custodia per strumenti musicali piccolo,66,6
+2,32.0,stiva,True,Attrezzatura sportiva,41,8
+3,30.0,stiva,True,Valigia grande rigida,127,5
+4,10.0,a mano,False,Borsone compatto,152,3
+5,23.0,stiva,False,Valigia media morbida,149,2
+6,23.0,stiva,False,Attrezzatura sportiva,187,4
+7,5.0,a mano,True,Borsone compatto,200,8
+8,10.0,a mano,False,Borsone compatto,14,8
+9,10.0,a mano,False,Borsa a tracolla,88,1
+10,5.0,a mano,True,Trolley piccolo,94,2
+11,28.0,stiva,True,Valigia grande rigida,195,1
+12,6.0,a mano,False,Ventiquattrore,45,6
+13,32.0,stiva,True,Pacco imballato,131,10
+14,25.0,stiva,True,Trolley grande,131,4
+15,18.5,stiva,True,Valigia grande rigida,24,6
+16,7.5,a mano,False,Ventiquattrore,77,9
+17,15.0,stiva,True,Valigia media morbida,80,6
+18,5.0,a mano,True,Zaino da trekking piccolo,16,2
+19,8.0,a mano,True,Borsone compatto,49,6
+20,22.5,stiva,False,Valigia da stiva classica,14,8
+21,18.5,stiva,False,Valigia da stiva classica,189,5
+22,32.0,stiva,True,Attrezzatura sportiva,200,2
+23,22.5,stiva,True,Pacco imballato,119,7
+24,8.0,a mano,False,Trolley piccolo,55,7
+25,7.5,a mano,False,Borsa a tracolla,40,9
+26,10.0,a mano,False,Zaino da trekking piccolo,42,8
+27,23.0,stiva,True,Borsone da viaggio grande,88,5
+28,22.5,stiva,False,Trolley grande,158,8
+29,23.0,stiva,False,Trolley grande,171,2
+30,10.0,a mano,False,Trolley piccolo,153,8
+31,30.0,stiva,False,Attrezzatura sportiva,12,1
+32,9.5,a mano,False,Trolley piccolo,129,4
+33,10.0,a mano,False,Custodia per strumenti musicali piccolo,17,8
+34,23.0,stiva,True,Valigia media morbida,165,9
+35,11.0,a mano,False,Zaino da trekking piccolo,4,4
+36,7.5,a mano,False,Zaino porta PC,196,5
+37,5.0,a mano,False,Borsone compatto,41,2
+38,9.5,a mano,False,Custodia per strumenti musicali piccolo,173,8
+39,7.5,a mano,False,Trolley piccolo,118,3
+40,9.5,a mano,False,Zaino da trekking piccolo,7,2
+41,32.0,stiva,False,Valigia media morbida,130,10
+42,7.5,a mano,False,Borsa a tracolla,20,6
+43,9.5,a mano,False,Borsone compatto,52,9
+44,9.5,a mano,False,Zaino porta PC,69,1
+45,25.0,stiva,True,Trolley grande,88,10
+46,25.0,stiva,True,Trolley grande,128,6
+47,11.0,a mano,False,Custodia per strumenti musicali piccolo,45,2
+48,28.0,stiva,False,Valigia media morbida,193,2
+49,22.5,stiva,False,Pacco imballato,78,7
+50,32.0,stiva,True,Trolley grande,154,3
+51,20.0,stiva,False,Valigia grande rigida,51,2
+52,7.5,a mano,False,Ventiquattrore,195,3
+53,5.0,a mano,False,Borsa a tracolla,122,4
+54,28.0,stiva,False,Valigia grande rigida,52,9
+55,6.0,a mano,False,Custodia per strumenti musicali piccolo,32,1
+56,30.0,stiva,True,Borsone da viaggio grande,143,8
+57,28.0,stiva,False,Valigia da stiva classica,41,1
+58,32.0,stiva,True,Borsone da viaggio grande,111,2
+59,23.0,stiva,False,Valigia media morbida,175,2
+60,6.0,a mano,False,Trolley piccolo,111,6
+61,10.0,a mano,False,Custodia per strumenti musicali piccolo,35,9
+62,8.0,a mano,False,Zaino da trekking piccolo,10,5
+63,15.0,stiva,True,Borsone da viaggio grande,154,5
+64,25.0,stiva,False,Valigia da stiva classica,182,5
+65,8.0,a mano,True,Borsone compatto,97,8
+66,18.5,stiva,True,Valigia da stiva classica,8,2
+67,18.5,stiva,True,Borsone da viaggio grande,55,10
+68,18.5,stiva,False,Pacco imballato,154,10
+69,22.5,stiva,False,Valigia media morbida,179,4
+70,32.0,stiva,False,Valigia da stiva classica,161,9
+71,6.0,a mano,False,Borsa a tracolla,137,5
+72,23.0,stiva,False,Valigia grande rigida,174,1
+73,23.0,stiva,False,Valigia media morbida,152,6
+74,22.5,stiva,False,Trolley grande,68,8
+75,32.0,stiva,True,Trolley grande,196,2
+76,25.0,stiva,False,Attrezzatura sportiva,198,10
+77,25.0,stiva,False,Valigia media morbida,14,3
+78,10.0,a mano,False,Borsone compatto,46,5
+79,6.0,a mano,False,Ventiquattrore,56,2
+80,20.0,stiva,False,Valigia da stiva classica,140,8
+81,9.5,a mano,False,Borsone compatto,78,9
+82,10.0,a mano,False,Borsa a tracolla,91,7
+83,18.5,stiva,False,Attrezzatura sportiva,33,1
+84,10.0,a mano,False,Trolley piccolo,146,3
+85,18.5,stiva,True,Pacco imballato,160,3
+86,8.0,a mano,False,Zaino porta PC,21,5
+87,23.0,stiva,False,Valigia da stiva classica,198,9
+88,23.0,stiva,True,Attrezzatura sportiva,167,9
+89,25.0,stiva,True,Valigia grande rigida,170,9
+90,23.0,stiva,False,Attrezzatura sportiva,67,10
+91,20.0,stiva,False,Attrezzatura sportiva,152,1
+92,8.0,a mano,False,Zaino da trekking piccolo,134,1
+93,18.5,stiva,True,Borsone da viaggio grande,13,2
+94,25.0,stiva,False,Valigia grande rigida,22,2
+95,7.5,a mano,True,Borsone compatto,67,1
+96,7.5,a mano,False,Borsa a tracolla,177,3
+97,25.0,stiva,False,Valigia media morbida,60,8
+98,18.5,stiva,False,Valigia media morbida,136,4
+99,8.0,a mano,False,Ventiquattrore,173,6
+100,9.5,a mano,True,Borsa a tracolla,112,2
+101,18.5,stiva,True,Valigia grande rigida,198,8
+102,9.5,a mano,True,Ventiquattrore,47,2
+103,23.0,stiva,False,Pacco imballato,42,2
+104,5.0,a mano,False,Trolley piccolo,38,2
+105,8.0,a mano,True,Zaino da trekking piccolo,10,7
+106,23.0,stiva,True,Attrezzatura sportiva,49,6
+107,8.0,a mano,False,Zaino da trekking piccolo,159,7
+108,15.0,stiva,True,Trolley grande,119,5
+109,30.0,stiva,True,Valigia grande rigida,177,5
+110,32.0,stiva,True,Valigia da stiva classica,7,8
+111,10.0,a mano,False,Custodia per strumenti musicali piccolo,38,9
+112,25.0,stiva,True,Attrezzatura sportiva,174,3
+113,22.5,stiva,False,Borsone da viaggio grande,190,1
+114,22.5,stiva,False,Pacco imballato,180,5
+115,10.0,a mano,True,Borsone compatto,52,10
+116,5.0,a mano,False,Borsone compatto,36,5
+117,10.0,a mano,True,Ventiquattrore,91,1
+118,10.0,a mano,False,Zaino porta PC,197,7
+119,25.0,stiva,True,Valigia grande rigida,23,3
+120,8.0,a mano,True,Zaino porta PC,46,9
+121,20.0,stiva,False,Borsone da viaggio grande,178,5
+122,25.0,stiva,False,Valigia da stiva classica,166,8
+123,8.0,a mano,True,Trolley piccolo,40,3
+124,8.0,a mano,False,Zaino porta PC,52,10
+125,23.0,stiva,True,Pacco imballato,189,8
+126,9.5,a mano,False,Zaino da trekking piccolo,149,3
+127,22.5,stiva,True,Pacco imballato,164,3
+128,10.0,a mano,False,Zaino porta PC,118,10
+129,10.0,a mano,False,Trolley piccolo,15,6
+130,8.0,a mano,False,Borsone compatto,110,2
+131,5.0,a mano,False,Zaino porta PC,181,1
+132,9.5,a mano,False,Zaino da trekking piccolo,191,7
+133,11.0,a mano,False,Ventiquattrore,28,3
+134,5.0,a mano,False,Trolley piccolo,108,1
+135,9.5,a mano,True,Trolley piccolo,174,8
+136,25.0,stiva,False,Attrezzatura sportiva,62,6
+137,6.0,a mano,False,Custodia per strumenti musicali piccolo,1,6
+138,8.0,a mano,False,Custodia per strumenti musicali piccolo,95,1
+139,18.5,stiva,False,Valigia da stiva classica,184,8
+140,20.0,stiva,False,Valigia grande rigida,185,8
+141,32.0,stiva,False,Valigia grande rigida,19,9
+142,5.0,a mano,True,Borsa a tracolla,200,1
+143,28.0,stiva,False,Attrezzatura sportiva,5,10
+144,10.0,a mano,False,Trolley piccolo,12,10
+145,7.5,a mano,False,Custodia per strumenti musicali piccolo,71,3
+146,5.0,a mano,True,Borsa a tracolla,193,8
+147,32.0,stiva,True,Pacco imballato,70,3
+148,20.0,stiva,False,Valigia media morbida,100,9
+149,32.0,stiva,False,Valigia grande rigida,81,5
+150,25.0,stiva,False,Trolley grande,18,8
+151,20.0,stiva,True,Valigia da stiva classica,11,10
+152,11.0,a mano,False,Trolley piccolo,193,6
+153,30.0,stiva,False,Trolley grande,117,3
+154,10.0,a mano,False,Zaino da trekking piccolo,82,5
+155,5.0,a mano,False,Zaino da trekking piccolo,100,7
+156,7.5,a mano,True,Zaino da trekking piccolo,144,3
+157,15.0,stiva,True,Borsone da viaggio grande,156,9
+158,30.0,stiva,True,Borsone da viaggio grande,25,7
+159,30.0,stiva,True,Valigia grande rigida,48,9
+160,11.0,a mano,False,Trolley piccolo,123,5
+161,32.0,stiva,True,Valigia grande rigida,190,2
+162,20.0,stiva,False,Borsone da viaggio grande,110,2
+163,9.5,a mano,True,Trolley piccolo,197,7
+164,8.0,a mano,False,Ventiquattrore,10,9
+165,30.0,stiva,False,Attrezzatura sportiva,105,9
+166,30.0,stiva,False,Valigia da stiva classica,133,10
+167,18.5,stiva,False,Trolley grande,155,9
+168,18.5,stiva,True,Trolley grande,72,4
+169,9.5,a mano,True,Borsa a tracolla,113,6
+170,5.0,a mano,False,Borsone compatto,184,4
+171,20.0,stiva,False,Pacco imballato,162,8
+172,8.0,a mano,False,Zaino da trekking piccolo,78,8
+173,7.5,a mano,True,Borsone compatto,165,2
+174,9.5,a mano,False,Ventiquattrore,32,5
+175,22.5,stiva,False,Valigia grande rigida,163,5
+176,8.0,a mano,False,Borsone compatto,56,8
+177,20.0,stiva,False,Valigia grande rigida,169,6
+178,23.0,stiva,False,Pacco imballato,53,5
+179,5.0,a mano,False,Borsa a tracolla,81,10
+180,6.0,a mano,True,Zaino porta PC,101,10
+181,6.0,a mano,False,Zaino porta PC,4,1
+182,7.5,a mano,False,Borsa a tracolla,77,8
+183,32.0,stiva,False,Valigia da stiva classica,102,5
+184,18.5,stiva,True,Valigia media morbida,39,4
+185,25.0,stiva,False,Attrezzatura sportiva,67,10
+186,6.0,a mano,False,Borsa a tracolla,175,5
+187,20.0,stiva,False,Pacco imballato,181,8
+188,5.0,a mano,False,Zaino porta PC,46,8
+189,23.0,stiva,False,Pacco imballato,104,7
+190,23.0,stiva,True,Attrezzatura sportiva,125,2
+191,8.0,a mano,False,Ventiquattrore,113,6
+192,30.0,stiva,True,Valigia grande rigida,29,10
+193,20.0,stiva,True,Trolley grande,34,6
+194,10.0,a mano,False,Ventiquattrore,89,1
+195,32.0,stiva,True,Valigia da stiva classica,55,5
+196,23.0,stiva,True,Trolley grande,50,8
+197,8.0,a mano,True,Zaino porta PC,8,3
+198,5.0,a mano,False,Borsone compatto,100,4
+199,5.0,a mano,False,Ventiquattrore,156,3
+200,30.0,stiva,False,Valigia da stiva classica,79,1

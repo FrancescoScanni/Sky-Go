@@ -1,0 +1,200 @@
+IATA,NomeEsteso,Città,ViaggiatoriAnnui,Superficie
+ATL,Hartsfield-Jackson Atlanta International Airport,Atlanta,110531300,19600
+DFW,Dallas/Fort Worth International Airport,Dallas,73362946,17207
+DEN,Denver International Airport,Denver,69000000,13500
+ORD,O'Hare International Airport,Chicago,68340866,7000
+LAX,Los Angeles International Airport,Los Angeles,88068013,7000
+CLT,Charlotte Douglas International Airport,Charlotte,50161595,2400
+MCO,Orlando International Airport,Orlando,50627732,4600
+LAS,Harry Reid International Airport,Las Vegas,51539567,2800
+PHX,Phoenix Sky Harbor International Airport,Phoenix,48243140,4800
+MIA,Miami International Airport,Miami,50749341,4900
+SEA,Seattle-Tacoma International Airport,Seattle,51823484,3500
+IAH,George Bush Intercontinental Airport,Houston,53760770,4200
+JFK,John F. Kennedy International Airport,New York,62658224,5200
+EWR,Newark Liberty International Airport,Newark,46329956,2400
+SFO,San Francisco International Airport,San Francisco,57967085,5700
+BOS,Logan International Airport,Boston,41195774,2300
+MSP,Minneapolis-Saint Paul International Airport,Minneapolis,38462574,3100
+DTW,Detroit Metropolitan Wayne County Airport,Detroit,35198288,3300
+PHL,Philadelphia International Airport,Philadelphia,31859249,2300
+LGA,LaGuardia Airport,New York,30016500,1500
+FLL,Fort Lauderdale-Hollywood International Airport,Fort Lauderdale,36000000,1400
+BWI,Baltimore/Washington International Airport,Baltimore,27100000,2000
+SLC,Salt Lake City International Airport,Salt Lake City,26227000,2700
+IAD,Washington Dulles International Airport,Washington,24000000,4600
+MDW,Chicago Midway International Airport,Chicago,22000000,900
+SAN,San Diego International Airport,San Diego,25000000,600
+TPA,Tampa International Airport,Tampa,21000000,1200
+PDX,Portland International Airport,Portland,19800000,1300
+HNL,Daniel K. Inouye International Airport,Honolulu,21500000,1800
+AUS,Austin-Bergstrom International Airport,Austin,17300000,900
+LHR,London Heathrow Airport,London,80888000,12140
+CDG,Paris Charles de Gaulle Airport,Parigi,76150007,3250
+AMS,Amsterdam Airport Schiphol,Amsterdam,71706000,6870
+FRA,Frankfurt Airport,Francoforte,70000000,2300
+IST,Istanbul Airport,Istanbul,76000000,7600
+MAD,Adolfo Suárez Madrid–Barajas Airport,Madrid,60200000,3800
+BCN,Josep Tarradellas Barcelona–El Prat Airport,Barcellona,52686942,1300
+MUC,Munich Airport,Monaco di Baviera,48000000,1500
+LGW,London Gatwick Airport,Londra,46578000,600
+FCO,Leonardo da Vinci–Fiumicino Airport,Roma,43500000,1500
+ZRH,Zurich Airport,Zurigo,31500000,875
+VIE,Vienna International Airport,Vienna,31700000,600
+BRU,Brussels Airport,Bruxelles,26000000,600
+ARN,Stockholm Arlanda Airport,Stoccolma,26400000,1600
+OSL,Oslo Gardermoen Airport,Oslo,28500000,1900
+CPH,Copenhagen Airport,Copenaghen,30300000,1200
+DUB,Dublin Airport,Dublino,32900000,870
+MAN,Manchester Airport,Manchester,28300000,700
+LIS,Humberto Delgado Airport,Lisbona,31600000,800
+ATH,Athens International Airport,Atene,26400000,800
+WAW,Warsaw Chopin Airport,Varsavia,18500000,450
+PRG,Václav Havel Airport Prague,Praga,17800000,650
+BUD,Budapest Ferenc Liszt International Airport,Budapest,16200000,800
+HAM,Hamburg Airport,Amburgo,16000000,570
+DUS,Düsseldorf Airport,Düsseldorf,25500000,550
+STR,Stuttgart Airport,Stoccarda,11700000,350
+TXL,Berlin Tegel Airport,Berlino,24300000,510
+BER,Berlin Brandenburg Airport,Berlino,26000000,1470
+NCE,Nice Côte d'Azur Airport,Nizza,14400000,370
+MXP,Milan Malpensa Airport,Milano,28800000,1400
+DXB,Dubai International Airport,Dubai,86396757,7000
+DOH,Hamad International Airport,Doha,30000000,2800
+AUH,Abu Dhabi International Airport,Abu Dhabi,23800000,7000
+SIN,Singapore Changi Airport,Singapore,68300000,1300
+HKG,Hong Kong International Airport,Hong Kong,71500000,1255
+ICN,Incheon International Airport,Seoul,71162990,4750
+NRT,Narita International Airport,Tokyo,40000000,2800
+HND,Tokyo Haneda Airport,Tokyo,87100000,1520
+PEK,Beijing Capital International Airport,Pechino,100011000,1480
+PKX,Beijing Daxing International Airport,Pechino,45000000,7000
+PVG,Shanghai Pudong International Airport,Shanghai,76153000,4000
+SHA,Shanghai Hongqiao International Airport,Shanghai,45600000,1700
+CAN,Guangzhou Baiyun International Airport,Guangzhou,73378475,3600
+CTU,Chengdu Tianfu International Airport,Chengdu,55000000,5200
+SZX,Shenzhen Bao'an International Airport,Shenzhen,52931000,1100
+KUL,Kuala Lumpur International Airport,Kuala Lumpur,62000000,10000
+BKK,Suvarnabhumi Airport,Bangkok,65421847,3200
+CGK,Soekarno-Hatta International Airport,Giacarta,66900000,1800
+MNL,Ninoy Aquino International Airport,Manila,47900000,680
+DEL,Indira Gandhi International Airport,Nuova Delhi,69900000,5500
+BOM,Chhatrapati Shivaji Maharaj International Airport,Mumbai,50000000,1950
+MAA,Chennai International Airport,Chennai,22000000,1300
+BLR,Kempegowda International Airport,Bengaluru,33400000,4000
+HYD,Rajiv Gandhi International Airport,Hyderabad,21000000,2600
+CCU,Netaji Subhas Chandra Bose International Airport,Calcutta,20400000,1200
+CMB,Bandaranaike International Airport,Colombo,12000000,900
+DAC,Hazrat Shahjalal International Airport,Dhaka,12000000,560
+KTM,Tribhuvan International Airport,Katmandu,5000000,240
+GRU,São Paulo–Guarulhos International Airport,San Paolo,44400000,3200
+GIG,Rio de Janeiro–Galeão International Airport,Rio de Janeiro,19900000,1800
+EZE,Ministro Pistarini International Airport,Buenos Aires,22000000,3450
+SCL,Arturo Merino Benítez International Airport,Santiago,22000000,1400
+BOG,El Dorado International Airport,Bogotà,36000000,1300
+LIM,Jorge Chávez International Airport,Lima,20000000,650
+UIO,Mariscal Sucre International Airport,Quito,6500000,1500
+CUN,Cancún International Airport,Cancún,30000000,600
+MEX,Mexico City International Airport,Città del Messico,50000000,900
+PTY,Tocumen International Airport,Panama City,17000000,1000
+SJO,Juan Santamaría International Airport,San José,5200000,440
+MBJ,Sangster International Airport,Montego Bay,4700000,250
+HAV,José Martí International Airport,L'Avana,4500000,750
+YYZ,Toronto Pearson International Airport,Toronto,50500000,4500
+YVR,Vancouver International Airport,Vancouver,26400000,1300
+YUL,Montréal–Trudeau International Airport,Montréal,20400000,1200
+YYC,Calgary International Airport,Calgary,17300000,1000
+JNB,O.R. Tambo International Airport,Johannesburg,21000000,3200
+CPT,Cape Town International Airport,Città del Capo,10600000,860
+NBO,Jomo Kenyatta International Airport,Nairobi,9100000,700
+LOS,Murtala Muhammed International Airport,Lagos,14000000,850
+ACC,Kotoka International Airport,Accra,5000000,430
+ADD,Addis Ababa Bole International Airport,Addis Abeba,12000000,800
+CAI,Cairo International Airport,Il Cairo,16000000,1500
+CMN,Mohammed V International Airport,Casablanca,9200000,1800
+ALG,Houari Boumediene Airport,Algeri,10200000,780
+TUN,Tunis-Carthage International Airport,Tunisi,7500000,400
+TRV,Trivandrum International Airport,Thiruvananthapuram,8000000,320
+COK,Cochin International Airport,Kochi,10000000,550
+AMD,Sardar Vallabhbhai Patel International Airport,Ahmedabad,11000000,1000
+PNQ,Pune Airport,Pune,9000000,380
+JAI,Jaipur International Airport,Jaipur,6500000,360
+GOI,Goa International Airport,Goa,8500000,450
+IXC,Chandigarh International Airport,Chandigarh,4000000,280
+VTZ,Visakhapatnam Airport,Visakhapatnam,3800000,260
+NAG,Dr. Babasaheb Ambedkar International Airport,Nagpur,4200000,370
+BBI,Biju Patnaik International Airport,Bhubaneswar,4500000,310
+GAU,Lokpriya Gopinath Bordoloi International Airport,Guwahati,4800000,350
+SYD,Sydney Kingsford Smith Airport,Sydney,44400000,900
+MEL,Melbourne Airport,Melbourne,37700000,1200
+BNE,Brisbane Airport,Brisbane,23300000,2700
+PER,Perth Airport,Perth,14000000,1700
+ADL,Adelaide Airport,Adelaide,9000000,440
+AKL,Auckland Airport,Auckland,21000000,1540
+CHC,Christchurch Airport,Christchurch,6700000,630
+WLG,Wellington International Airport,Wellington,6200000,180
+SVO,Sheremetyevo International Airport,Mosca,49600000,1900
+DME,Domodedovo International Airport,Mosca,35800000,1100
+VKO,Vnukovo International Airport,Mosca,26700000,640
+LED,Pulkovo Airport,San Pietroburgo,20200000,500
+KBP,Boryspil International Airport,Kiev,15300000,780
+OTP,Henri Coandă International Airport,Bucarest,14800000,640
+SOF,Sofia Airport,Sofia,7500000,350
+BEG,Belgrade Nikola Tesla Airport,Belgrado,7400000,280
+ZAG,Zagreb Airport,Zagabria,3800000,250
+SKP,Skopje Alexander the Great Airport,Skopje,2000000,150
+TIA,Tirana International Airport,Tirana,3500000,180
+OPO,Francisco de Sá Carneiro Airport,Porto,13600000,350
+SVQ,Seville Airport,Siviglia,7200000,350
+AGP,Málaga Airport,Malaga,21000000,450
+PMI,Palma de Mallorca Airport,Palma,30000000,540
+IBZ,Ibiza Airport,Ibiza,9600000,240
+TFS,Tenerife South Airport,Tenerife,12500000,320
+LPA,Gran Canaria Airport,Las Palmas,13800000,580
+MRS,Marseille Provence Airport,Marsiglia,9600000,480
+LYS,Lyon-Saint Exupéry Airport,Lione,12400000,700
+TLS,Toulouse-Blagnac Airport,Tolosa,9500000,470
+BOD,Bordeaux–Mérignac Airport,Bordeaux,7200000,420
+NTE,Nantes Atlantique Airport,Nantes,6600000,350
+LIL,Lille Airport,Lilla,1800000,150
+SXB,Strasbourg Airport,Strasburgo,2000000,180
+GVA,Geneva Airport,Ginevra,17700000,360
+BSL,EuroAirport Basel-Mulhouse-Freiburg,Basilea,9200000,280
+BRN,Bern Airport,Berna,180000,100
+VCE,Venice Marco Polo Airport,Venezia,11500000,400
+LIN,Milan Linate Airport,Milano,9800000,170
+BGY,Orio al Serio International Airport,Bergamo,14500000,240
+BLQ,Bologna Guglielmo Marconi Airport,Bologna,9500000,320
+PSA,Galileo Galilei International Airport,Pisa,5800000,180
+FLR,Peretola Airport,Firenze,2600000,150
+NAP,Naples International Airport,Napoli,11000000,360
+CTA,Catania-Fontanarossa Airport,Catania,10800000,290
+PMO,Falcone–Borsellino Airport,Palermo,7200000,480
+BRI,Karol Wojtyła Airport,Bari,5200000,280
+CAG,Cagliari Elmas Airport,Cagliari,4300000,220
+AHO,Fertilia Airport,Alghero,1800000,120
+TRN,Turin Airport,Torino,4200000,260
+VRN,Valerio Catullo Airport,Verona,3700000,210
+GEN,Genoa Cristoforo Colombo Airport,Genova,1700000,130
+RMI,Federico Fellini International Airport,Rimini,900000,100
+SUF,Lamezia Terme International Airport,Lamezia Terme,2800000,160
+REG,Reggio Calabria Airport,Reggio Calabria,1100000,90
+PEG,San Francesco d'Assisi Airport,Perugia,500000,80
+PSR,Abruzzo Airport,Pescara,800000,95
+TSF,Treviso Airport,Treviso,2200000,130
+KWI,Kuwait International Airport,Kuwait City,13500000,600
+BAH,Bahrain International Airport,Manama,14000000,450
+MCT,Muscat International Airport,Muscat,18500000,580
+AMM,Queen Alia International Airport,Amman,9200000,1050
+BEY,Rafic Hariri International Airport,Beirut,8100000,420
+TLV,Ben Gurion International Airport,Tel Aviv,24900000,845
+TBS,Tbilisi International Airport,Tbilisi,4500000,280
+EVN,Zvartnots International Airport,Yerevan,3800000,210
+GYD,Heydar Aliyev International Airport,Baku,5000000,680
+ASB,Ashgabat International Airport,Ashgabat,2500000,890
+TAS,Islam Karimov Tashkent International Airport,Tashkent,4200000,320
+ALA,Almaty International Airport,Almaty,8700000,510
+NQZ,Nursultan Nazarbayev International Airport,Nur-Sultan,8200000,980
+KHI,Jinnah International Airport,Karachi,7400000,430
+LHE,Allama Iqbal International Airport,Lahore,6200000,380
+ISB,Islamabad International Airport,Islamabad,7100000,1500

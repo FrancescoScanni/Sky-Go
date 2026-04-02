@@ -1,0 +1,201 @@
+ID,Modello,Capacità,NomeCompagnia,AnnoCostruzione
+1,Boeing 777-200ER,317,SAS Scandinavian,2022
+2,Boeing 737-800,171,Cathay Pacific,2022
+3,Boeing 767-300ER,252,Qatar Airways,1990
+4,Bombardier CRJ-900,87,American Airlines,2007
+5,Airbus A330-300,333,Avianca,2013
+6,Airbus A330neo,283,Qatar Airways,1993
+7,Boeing 777-200ER,332,SAS Scandinavian,2013
+8,Airbus A330neo,264,Iberia,2024
+9,Airbus A330neo,293,Southwest Airlines,2014
+10,Airbus A321,212,Thai Airways,2022
+11,Boeing 777-300ER,374,British Airways,2014
+12,Airbus A330-300,314,All Nippon Airways,2010
+13,Embraer E190,97,Avianca,1998
+14,Airbus A350-900,318,Delta Air Lines,2023
+15,Boeing 777X,390,Air Canada,2006
+16,Airbus A320,169,All Nippon Airways,1996
+17,Airbus A320neo,153,Qatar Airways,2012
+18,Boeing 737 MAX 8,172,Thai Airways,2002
+19,Embraer E190,101,South African Airways,1999
+20,Airbus A350-900,324,Lufthansa,1990
+21,Airbus A321neo,236,Aeroméxico,2020
+22,Boeing 737-800,182,American Airlines,1992
+23,Airbus A321XLR,185,American Airlines,1996
+24,Boeing 777-200ER,335,Ethiopian Airlines,2010
+25,Airbus A319,123,British Airways,2000
+26,Embraer E190,101,Air New Zealand,2017
+27,Airbus A350-900,344,Aeroméxico,2020
+28,Boeing 737-800,169,Alitalia,1992
+29,Boeing 757-200,198,Air Canada,2009
+30,Airbus A330-300,314,Aeroméxico,2008
+31,ATR 72-600,71,Air India,1993
+32,Airbus A380,646,LATAM Airlines,2013
+33,Boeing 767-300ER,245,SAS Scandinavian,2007
+34,Airbus A350-1000,382,Qantas,2001
+35,Airbus A321XLR,188,Southwest Airlines,2011
+36,Airbus A330neo,300,Lufthansa,2005
+37,Bombardier CRJ-900,89,Emirates,2004
+38,Airbus A321neo,242,KLM Royal Dutch Airlines,2023
+39,Airbus A330neo,283,Emirates,2018
+40,Boeing 787-9,296,Ethiopian Airlines,2018
+41,ATR 72-600,74,Iberia,2012
+42,Boeing 747-400,458,South African Airways,2015
+43,Airbus A350-1000,391,Alitalia,1995
+44,Airbus A330neo,296,Avianca,2018
+45,Embraer E190,103,Aeroméxico,2020
+46,Embraer E175,80,South African Airways,1999
+47,Boeing 747-400,480,Aeroméxico,1998
+48,Boeing 787-8,251,Alitalia,2002
+49,Boeing 787-8,249,Avianca,1991
+50,Boeing 777X,394,South African Airways,2002
+51,Boeing 737 MAX 10,197,All Nippon Airways,2017
+52,Boeing 777X,389,American Airlines,2012
+53,Airbus A350-900,349,American Airlines,1996
+54,Boeing 747-400,495,Qatar Airways,2000
+55,Boeing 777-300ER,374,All Nippon Airways,2016
+56,Boeing 787-10,330,Air India,2021
+57,Boeing 767-300ER,265,Air Canada,2000
+58,Bombardier CRJ-900,88,All Nippon Airways,2023
+59,Airbus A380,599,Southwest Airlines,2012
+60,Airbus A350-900,355,Cathay Pacific,1993
+61,Boeing 737 MAX 10,189,Lufthansa,2023
+62,Boeing 777-300ER,386,KLM Royal Dutch Airlines,2014
+63,Airbus A330-300,313,Air France,2013
+64,Bombardier CRJ-900,89,Thai Airways,1992
+65,Boeing 787-9,296,Emirates,2021
+66,Airbus A350-1000,382,Delta Air Lines,2009
+67,Boeing 737 MAX 8,163,KLM Royal Dutch Airlines,2004
+68,Boeing 777-300ER,379,Cathay Pacific,2001
+69,Airbus A330neo,290,Lufthansa,2004
+70,Boeing 757-200,200,Air India,2017
+71,Airbus A330neo,295,Southwest Airlines,2004
+72,Boeing 787-9,296,Air New Zealand,2020
+73,Airbus A330-200,284,Avianca,2019
+74,Airbus A380,668,Avianca,1990
+75,Boeing 777-300ER,373,Qatar Airways,1999
+76,Boeing 777X,399,Emirates,2010
+77,Airbus A380,709,Alitalia,2004
+78,Boeing 747-400,426,Ethiopian Airlines,2004
+79,Airbus A340-600,377,Qatar Airways,2003
+80,Embraer E190,106,Singapore Airlines,2018
+81,Boeing 737 MAX 8,174,LATAM Airlines,2019
+82,Airbus A350-1000,380,Avianca,2011
+83,Airbus A340-600,340,Air India,2023
+84,Airbus A319,135,Cathay Pacific,2012
+85,Airbus A320neo,170,Ethiopian Airlines,2009
+86,Airbus A321neo,222,LATAM Airlines,2017
+87,Airbus A320,167,Air India,1997
+88,Airbus A350-900,343,Avianca,2007
+89,Boeing 787-9,296,KLM Royal Dutch Airlines,1992
+90,Boeing 747-400,446,Aeroméxico,2006
+91,Boeing 737-800,189,Thai Airways,2007
+92,Airbus A319,131,Aeroméxico,2010
+93,Boeing 737-800,171,Delta Air Lines,1990
+94,Airbus A330-300,277,South African Airways,2000
+95,Airbus A330-200,278,Ethiopian Airlines,2005
+96,Boeing 757-200,221,Air India,2007
+97,Airbus A321,209,Aeroméxico,2015
+98,Airbus A320,176,United Airlines,2023
+99,Airbus A321neo,213,Korean Air,2006
+100,Airbus A321XLR,197,Southwest Airlines,2014
+101,Airbus A321neo,216,United Airlines,2023
+102,Embraer E175,80,Air Canada,2010
+103,Airbus A330-200,289,SAS Scandinavian,2002
+104,Boeing 767-300ER,264,SAS Scandinavian,2001
+105,Boeing 737 MAX 8,174,Ethiopian Airlines,2009
+106,Airbus A320neo,183,KLM Royal Dutch Airlines,2014
+107,Boeing 777-300ER,376,Korean Air,2009
+108,Boeing 757-200,214,Southwest Airlines,1999
+109,ATR 72-600,78,Southwest Airlines,2021
+110,Boeing 787-9,296,Cathay Pacific,1990
+111,Boeing 737 MAX 8,164,Lufthansa,2024
+112,Boeing 757-200,221,Cathay Pacific,2008
+113,Boeing 757-200,190,Iberia,2006
+114,Boeing 777-200ER,362,Qatar Airways,2015
+115,Bombardier CRJ-900,86,Avianca,2021
+116,Boeing 737 MAX 8,162,Air France,2006
+117,Airbus A330-200,289,Southwest Airlines,2004
+118,Embraer E175,81,All Nippon Airways,2009
+119,Boeing 787-10,330,Avianca,2002
+120,Airbus A321neo,190,Qatar Airways,2003
+121,Airbus A350-1000,410,Alitalia,2002
+122,Airbus A340-600,376,South African Airways,1990
+123,Boeing 757-200,186,Cathay Pacific,2013
+124,Boeing 777X,416,British Airways,2019
+125,Boeing 737 MAX 10,190,KLM Royal Dutch Airlines,2015
+126,Boeing 787-8,246,KLM Royal Dutch Airlines,1992
+127,Airbus A319,136,Aeroméxico,2017
+128,Embraer E195-E2,142,American Airlines,2005
+129,Airbus A350-1000,399,Cathay Pacific,2022
+130,Airbus A320,168,Lufthansa,2013
+131,Airbus A321,181,SAS Scandinavian,2022
+132,Airbus A320,159,Southwest Airlines,1995
+133,Boeing 787-10,330,Alitalia,2006
+134,Embraer E190,102,Qatar Airways,2003
+135,ATR 72-600,78,Air India,2023
+136,Airbus A320,155,Air France,1991
+137,Boeing 787-8,254,Avianca,2023
+138,Boeing 777-200ER,371,Qatar Airways,1999
+139,Airbus A330-200,278,British Airways,1990
+140,Embraer E195-E2,132,Southwest Airlines,2021
+141,Airbus A320neo,175,Iberia,1992
+142,Airbus A320,171,Qantas,2021
+143,Boeing 787-8,258,KLM Royal Dutch Airlines,2018
+144,Airbus A321neo,241,Air New Zealand,2002
+145,Airbus A321XLR,215,Air New Zealand,1994
+146,Boeing 757-200,224,Southwest Airlines,2021
+147,Boeing 777X,399,South African Airways,1996
+148,Boeing 737 MAX 8,164,Alitalia,2015
+149,Airbus A380,566,Lufthansa,2011
+150,Boeing 737 MAX 8,165,Southwest Airlines,2000
+151,Airbus A330-300,320,Ethiopian Airlines,2005
+152,Airbus A330neo,290,British Airways,2007
+153,Airbus A320neo,193,Avianca,1995
+154,Airbus A321,219,British Airways,2006
+155,Boeing 767-300ER,268,KLM Royal Dutch Airlines,1992
+156,Boeing 787-9,296,Aeroméxico,2005
+157,Boeing 787-9,296,Delta Air Lines,2022
+158,Boeing 787-10,330,United Airlines,1993
+159,Airbus A340-600,376,Cathay Pacific,2018
+160,Airbus A320,164,Qatar Airways,2013
+161,Embraer E175,76,American Airlines,1997
+162,Boeing 787-8,244,Air Canada,2005
+163,Boeing 777-200ER,360,Iberia,1998
+164,Airbus A350-1000,398,Lufthansa,2000
+165,Boeing 757-200,191,Air France,1994
+166,Boeing 777-200ER,304,Iberia,2006
+167,ATR 72-600,69,Qatar Airways,2018
+168,Boeing 787-8,255,Singapore Airlines,2021
+169,Boeing 767-300ER,264,Alitalia,1993
+170,Boeing 737 MAX 8,171,Air Canada,2008
+171,Bombardier CRJ-900,87,Alitalia,1991
+172,Airbus A320,167,Iberia,2016
+173,Boeing 787-9,296,Avianca,1992
+174,Airbus A319,152,Aeroméxico,2022
+175,Airbus A320,164,Avianca,1996
+176,Bombardier CRJ-900,86,Emirates,1992
+177,Airbus A350-900,327,Avianca,2019
+178,Airbus A330-200,281,Lufthansa,2004
+179,Airbus A340-600,321,Thai Airways,1990
+180,Boeing 777-300ER,390,Delta Air Lines,2003
+181,Airbus A319,139,Aeroméxico,2014
+182,Boeing 787-10,330,Cathay Pacific,2024
+183,Bombardier CRJ-900,86,All Nippon Airways,2003
+184,Boeing 737-800,179,Aeroméxico,2023
+185,Boeing 787-10,330,Alitalia,2018
+186,Boeing 787-8,248,Delta Air Lines,2018
+187,Boeing 747-400,418,Emirates,1994
+188,Boeing 787-8,259,British Airways,1991
+189,Boeing 787-10,330,Air India,2022
+190,Airbus A320neo,160,Southwest Airlines,1996
+191,Airbus A340-600,336,United Airlines,2006
+192,Embraer E175,86,Cathay Pacific,1992
+193,Boeing 747-400,506,All Nippon Airways,2003
+194,Bombardier CRJ-900,87,United Airlines,2008
+195,Airbus A321XLR,212,Qatar Airways,2005
+196,Boeing 787-9,296,Korean Air,2003
+197,Boeing 777X,389,South African Airways,2020
+198,Boeing 787-8,247,Alitalia,2005
+199,Airbus A350-900,338,Emirates,2013
+200,Airbus A340-600,341,Qantas,1993
