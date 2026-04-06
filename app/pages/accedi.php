@@ -1,3 +1,36 @@
+<?php
+    session_start();
+    require_once("../models/passeggero.php");
+    require_once("generalFunctions.php");
+
+    $err=false;
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $mail=sanitize($_POST["mail"]);
+        if(empty($_POST["password"])){
+            $passwordErr="*Inserisci una password";
+            $err=true;
+        }else{
+            $password=sanitize($_POST["password"]);
+        }
+
+        if(!$err){
+            //gestisco ecceione e rilancio su homepage
+            try{
+                if(Passeggero::logga($mail, $password)){ //controllo e loggo
+                    header("Location: ../index.php"); //loggato con succsso
+                }else{
+                    echo $loginFallito; //log fallito
+                }
+            }catch(Exception $e){
+                echo "Qualcosa è andato storto: " . $e->getMessage();
+                exit;
+            }
+        }
+    }
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -31,7 +64,6 @@
 
 <body class="accedi">
     
-    <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
 
     <div class="relative w-full max-w-md bg-white rounded-3xl shadow-2xl p-8">
         
@@ -43,16 +75,16 @@
             <p class="text-sm text-gray-500 mt-2">Inserisci le tue credenziali per accedere.</p>
         </div>
 
-        <form action="#" method="POST" class="space-y-5">
+        <form action="accedi.php" method="POST" class="space-y-5">
             
             <div class="relative">
                 <i class="fa-solid fa-user absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
-                <input type="text" id="login-id" placeholder="Email o Numero di Telefono" class="w-full bg-inputBg text-gray-700 text-sm pl-11 pr-4 py-3.5 rounded-xl outline-none focus:ring-2 focus:ring-brandPrimary transition">
+                <input type="email" name="mail" id="login-id" placeholder="Email peronale" required class="w-full bg-inputBg text-gray-700 text-sm pl-11 pr-4 py-3.5 rounded-xl outline-none focus:ring-2 focus:ring-brandPrimary transition">
             </div>
 
             <div class="relative">
                 <i class="fa-solid fa-lock absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
-                <input type="password" id="login-password" placeholder="Password" class="w-full bg-inputBg text-gray-700 text-sm pl-11 pr-4 py-3.5 rounded-xl outline-none focus:ring-2 focus:ring-brandPrimary transition">
+                <input type="password" name="password" placeholder="Password" required  class="w-full bg-inputBg text-gray-700 text-sm pl-11 pr-4 py-3.5 rounded-xl outline-none focus:ring-2 focus:ring-brandPrimary transition">
             </div>
 
             <div class="flex justify-end">
@@ -60,9 +92,9 @@
             </div>
 
             <div class="pt-4 space-y-4">
-                <button type="button" id="btnAccedi" class="w-full bg-brandPrimary hover:bg-opacity-90 text-white py-3.5 rounded-xl font-semibold transition shadow-md">
-                    Accedi
-                </button>
+                <input type="submit" value="Accedi" id="btnAccedi" class="w-full bg-brandPrimary hover:bg-opacity-90 text-white py-3.5 rounded-xl font-semibold transition shadow-md">
+                    
+                </input>
                 
                 <div class="text-center text-sm text-gray-500 pt-3 border-t border-gray-100">
                     Non hai ancora un account? <a href="registra.php" class="text-brandPrimary font-semibold hover:underline">Registrati qui</a>

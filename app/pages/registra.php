@@ -1,18 +1,12 @@
 <?php
     session_start(); //avvio sessione
-    require_once("connessioneDB.php");
+    require_once("generalFunctions.php");
     require_once("../models/passeggero.php");
+    
 
     $err=false;
     $nomeErr=$cognomeErr=$mailErr=$telefonoErr=$dataErr=$genereErr=$passwordErr="";
 
-
-    function sanitize($data){
-        $data=trim($data);
-        $data=stripslashes($data);
-        $data=htmlspecialchars($data);
-        return $data;
-    }
 
     //prendo variabili di sessione
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -64,8 +58,7 @@
             $passeggero=new Passeggero($nome,$cognome,$mail,$telefono,$data,$genere,$password);
             try{
                 //salvo il nuovo passeggero nel DB
-                $passeggero->salva($conn);
-
+                $passeggero->salva();
                 $_SESSION['registrato']=true;
             }catch(Exception $e){
                 echo $e;
@@ -112,8 +105,10 @@
     
     <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div> <!--sfondo opaco-->
 
+
     <!--Main body-->
     <div class="relative w-full max-w-lg bg-white rounded-3xl shadow-2xl p-8">
+
         
         <!--Return home-->
         <div class="absolute">

@@ -1,16 +1,35 @@
+<?php
+    session_start();
+    require_once("pages/generalFunctions.php");
+    require_once("components/voliSection.php");
+    setcookie("sessionID", "forzabari", time()+3600, "/");
+
+    if(isset($_COOKIE['sessionID'])){
+        //echo "Cookie sessionID presente e valido.";
+    }else{
+        $_SESSION['loggato']=false;
+        echo $cookieMsg;
+    }
+    if(!isset($_SESSION['loggato'])){ //setto su falso a primo ingresso pagna 
+        $_SESSION['loggato']=false;
+    }
+    if(!isset($_SESSION['AR'])){ //setto su false a primo ingresso pagina
+        $_SESSION['AR']=false;
+    }
+    $_SESSION['idVolo'] = 0;
+?>
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sky&GO - Clone</title>
+    <title>Sky&GO - Trova voli economici a costo zero</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
-
     <link rel="stylesheet" href="static/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <script>
         tailwind.config = {
             theme: {
@@ -44,13 +63,25 @@
             <div class="hidden md:flex space-x-10 text-gray-800 font-semibold text-sm">
                 <a href="#titoli" class="hover:text-brandPrimary transition">Home</a>
                 <a href="#hero2" class="hover:text-brandPrimary transition">Info</a>
-                <a href="pages/registra.php" class="hover:text-brandPrimary transition">Logs</a>
+                <?php
+                    if($_SESSION['loggato']===true){
+                        echo '<a href="pages/prenotazioni.php" class="hover:text-brandPrimary transition">Prenotazioni</a>';
+                    }else{
+                        echo '<a class="hover:text-brandPrimary transition cursor-not-allowed disabled">Prenotazioni</a>';
+                    }
+                ?>
+
                 <a href="#footer" class="hover:text-brandPrimary transition">Contatti</a>
             </div>
             
-            <div class="flex items-center space-x-6 text-sm font-semibold text-gray-800">
-                <a href="pages/accedi.php" class="hover:text-brandPrimary transition">Accedi</a>
-                <a href="pages/registra.php" class="bg-brandPrimary hover:bg-opacity-90 text-white px-6 py-2.5 rounded-lg transition shadow-md">Iscriviti</a>
+            <div id="logBox" class="flex items-center space-x-6 text-sm font-semibold text-gray-800">
+                <?php
+                    if(isset($_SESSION['loggato'])&& $_SESSION['loggato']===true){
+                        echo $homepageLoggato;
+                    }else{
+                        echo $homepageStandard;
+                    }
+                ?>
             </div>
         </nav>
 
@@ -64,63 +95,14 @@
             </p>
         </div>
 
-        <div class="w-full max-w-6xl mx-auto relative">
-            
-            <div class="bg-searchBg rounded-r-3xl rounded-bl-3xl p-6 md:p-8 shadow-2xl relative">
-                
-                <div class="bg-searchBg absolute -top-16 left-0 rounded-t-3xl  p-3 flex space-x-2">
-                    <button class="bg-brandPrimary text-white flex items-center space-x-2 px-6 py-3 rounded-xl font-medium shadow-md">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <span>Aeroporti</span>
-                    </button>
-                    <button class="text-gray-600 hover:bg-gray-200 flex items-center space-x-2 px-6 py-3 rounded-xl font-medium transition">
-                        <i class="fa-solid fa-plane"></i>
-                        <span>Voli</span>
-                    </button>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6 mt-4 md:mt-0 items-end divide-y md:divide-y-0 md:divide-x divide-gray-300">
-                    
-                    <div class="flex flex-col space-y-2 pr-0 md:pr-4">
-                        <label class="text-gray-800 font-bold text-sm flex items-center justify-between">
-                            Destinazioni <i class="fa-solid fa-chevron-down text-xs text-gray-500"></i>
-                        </label>
-                        <input type="text" placeholder="Where Are You Going?" class="w-full bg-inputBg text-gray-700 text-sm px-4 py-3 rounded-lg outline-none focus:ring-2 focus:ring-brandPrimary transition placeholder-gray-400">
-                    </div>
-
-                    <div class="flex flex-col space-y-2 px-0 md:px-4 pt-4 md:pt-0">
-                        <label class="text-gray-800 font-bold text-sm">Partenza</label>
-                        <div class="relative w-full">
-                            <input type="text" placeholder="Choose Dates" class="w-full bg-inputBg text-gray-700 text-sm px-4 py-3 rounded-lg outline-none focus:ring-2 focus:ring-brandPrimary transition placeholder-gray-400">
-                            <i class="fa-regular fa-calendar absolute right-4 top-1/2 transform -translate-y-1/2 text-brandPrimary"></i>
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col space-y-2 px-0 md:px-4 pt-4 md:pt-0">
-                        <label class="text-gray-800 font-bold text-sm">Ritorno</label>
-                        <div class="relative w-full">
-                            <input type="text" placeholder="Choose Dates" class="w-full bg-inputBg text-gray-700 text-sm px-4 py-3 rounded-lg outline-none focus:ring-2 focus:ring-brandPrimary transition placeholder-gray-400">
-                            <i class="fa-regular fa-calendar absolute right-4 top-1/2 transform -translate-y-1/2 text-brandPrimary"></i>
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col space-y-2 pl-0 md:pl-4 pt-4 md:pt-0">
-                        <label class="text-gray-800 font-bold text-sm flex items-center justify-between">
-                            Viaggiatori <i class="fa-solid fa-chevron-down text-xs text-gray-500"></i>
-                        </label>
-                        <div class="flex space-x-3">
-                            <input type="text" placeholder="Add Gust" class="w-full bg-inputBg text-gray-700 text-sm px-4 py-3 rounded-lg outline-none focus:ring-2 focus:ring-brandPrimary transition placeholder-gray-400">
-                            <button class="bg-brandPrimary hover:bg-opacity-90 text-white whitespace-nowrap px-6 py-3 rounded-lg font-medium transition shadow-md flex items-center space-x-2">
-                                <span>Cerca Opzioni</span>
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </button>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
+        <!--Sezione di ricerca voli-->
+        <?php
+            if($_SESSION['AR']===false){
+                echo $andataRitorno;
+            }else{
+                echo $soloAndata;
+            }
+        ?>
     </div>
 
     <!--Hero intermedio / Perchè sceliere noi-->
@@ -209,7 +191,6 @@
             </div>
         </div>
     </div>
-
 
     <!--Footer di fine pagina-->
     <footer id="footer" class="w-full bg-[#1A1C23] text-white pt-16 pb-8 font-sans">
@@ -301,5 +282,12 @@
 
 
 
+    <script>
+        //cambiare form di ricerca tra AR e A
+        function cambiaForm() {
+            <?php $_SESSION['AR'] = !$_SESSION['AR']; ?>   
+            window.location.reload();
+        }
+    </script>
 </body>
 </html>
