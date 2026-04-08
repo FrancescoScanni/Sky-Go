@@ -36,7 +36,7 @@
         //chiamata API
         if(!$err){
             global $conn;
-            $key=$_ENV['DUFFEL_TOKEN']; //la mia key 
+            $key;//apiiiiii; //la mia key 
             foreach($codiciArrivo as $arrivo){
                 foreach($codiciPartenza as $partenza){                        
                     $passeggeriArray = [];

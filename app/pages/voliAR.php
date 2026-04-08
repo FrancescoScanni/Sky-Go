@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //chiamo API Duffer
     if(!$err){ //commenti su quello di sola andata
             global $conn;
-            $key=$_ENV['DUFFEL_TOKEN']; //la mia key 
+            $key;//apiiii  $_ENV['DUFFEL_TOKEN']; //la mia key 
             foreach($codiciArrivo as $arrivo){
                 foreach($codiciPartenza as $partenza){                        
                     $passeggeriArray = [];
