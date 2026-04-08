@@ -121,7 +121,7 @@
                 <div class="absolute top-12 -right-8 md:-right-16 bg-white p-3 rounded-[24px] shadow-2xl w-[260px]">
                     
                     <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Stanza" class="w-full h-36 object-cover rounded-[16px]">
+                        <img src="https://static.vecteezy.com/ti/foto-gratuito/p2/3023862-vista-in-volo-dalla-finestra-con-sfondo-tramonto-sbalorditivo-gratuito-foto.jpg" alt="Stanza" class="w-full h-36 object-cover rounded-[16px]">
                         <button class="absolute top-3 right-3 text-gray-700 hover:text-red-500 transition">
                             <i class="fa-regular fa-heart"></i>
                         </button>
@@ -129,7 +129,7 @@
 
                     <div class="pt-3 px-1">
                         <div class="flex justify-between items-center mb-1">
-                            <h4 class="font-bold text-textDark text-sm">Suggerimento Statico*</h4>
+                            <h4 class="font-bold text-textDark text-sm">New Delhi low cosy</h4>
                             <div class="flex items-center space-x-1">
                                 <i class="fa-solid fa-star text-textDark text-[10px]"></i>
                                 <span class="font-bold text-textDark text-xs">4.92</span>
@@ -137,14 +137,14 @@
                         </div>
                         
                         <p class="text-[10px] text-textGray leading-tight mb-3">
-                            Voluptatibus Nemo Amet Voluptatem Quia Ipsa Eum. Est Ut Voluptas.
+                            Raggiungi mete mai viste prima approfittando delle offerte.
                         </p>
 
                         <div class="border-t border-dashed border-gray-300 my-3"></div>
 
                         <div class="flex justify-between items-center">
                             <div class="font-bold text-textDark text-sm">
-                                $139.00 <span class="font-normal text-[10px] text-textGray">Night</span>
+                                €139.00 <span class="font-normal text-[10px] text-textGray">Notte</span>
                             </div>
                             <div class="flex items-center space-x-1 text-textGray">
                                 <i class="fa-solid fa-location-dot text-[10px] text-brandPrimary"></i>
@@ -184,7 +184,7 @@
                 </ul>
 
                 <p class="text-textGray font-medium leading-relaxed max-w-lg">
-                    Un Unico Posto Dove Confrontare Offerte, Scegliere La Soluzione Perfetta E Prenotare Il Tuo Prossimo Viaggio In Modo Pratico E Senza Stress. 
+                    Prossimamente nuove funzioni, recensioni, aggiunta bagagli, pacchetti viaggio e tanto altro!
                     <i class="fa-solid fa-plane text-brandPrimary ml-1 transform -rotate-45"></i>
                 </p>
 
@@ -201,42 +201,42 @@
                 <div class="lg:col-span-3 flex flex-col space-y-6">
                     <div>
                         <div class="border-[3px] border-white inline-block px-2 py-0.5">
-                            <span class="font-bold text-3xl tracking-widest leading-none">LIFT</span>
+                            <span class="font-bold text-3xl tracking-widest leading-none">SKYGO</span>
                         </div>
                     </div>
                     
                     <p class="text-gray-400 text-sm leading-relaxed pr-4">
-                        Hello, we are Lift Media. Our goal is to translate the positive effects from revolutionizing how companies engage with their clients & their team.
+                        Benvenuti in SkyGo. Il nostro obiettivo è rivoluzionare il modo in cui si viaggia e si acquistano voli.
                     </p>
                     
                     <div class="flex space-x-3">
-                        <a href="#" class="w-10 h-10 rounded-full border border-gray-600 flex items-center justify-center text-gray-300 hover:bg-white hover:text-[#1A1C23] transition duration-300">
+                        <a href="https://it.linkedin.com/" class="w-10 h-10 rounded-full border border-gray-600 flex items-center justify-center text-gray-300 hover:bg-white hover:text-[#1A1C23] transition duration-300">
                             <i class="fa-brands fa-linkedin-in text-sm"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 rounded-full border border-gray-600 flex items-center justify-center text-gray-300 hover:bg-white hover:text-[#1A1C23] transition duration-300">
-                            <i class="fa-brands fa-facebook-f text-sm"></i>
+                        <a href="https://github.com/FrancescoScanni" class="w-10 h-10 rounded-full border border-gray-600 flex items-center justify-center text-gray-300 hover:bg-white hover:text-[#1A1C23] transition duration-300">
+                            <i class="fa-brands fa-github text-sm"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 rounded-full border border-gray-600 flex items-center justify-center text-gray-300 hover:bg-white hover:text-[#1A1C23] transition duration-300">
-                            <i class="fa-brands fa-twitter text-sm"></i>
+                        <a href="mailto:frascanni07@gmail.com" class="w-10 h-10 rounded-full border border-gray-600 flex items-center justify-center text-gray-300 hover:bg-white hover:text-[#1A1C23] transition duration-300">
+                            <i class="fa-solid fa-envelope text-sm"></i>
                         </a>
                     </div>
                 </div>
 
                 <div class="lg:col-span-2">
-                    <h4 class="font-bold text-white mb-6">Product</h4>
+                    <h4 class="font-bold text-white mb-6">Prodotto</h4>
                     <ul class="space-y-4">
-                        <li><a href="#" class="text-gray-400 text-sm hover:text-white transition">About</a></li>
-                        <li><a href="#" class="text-gray-400 text-sm hover:text-white transition">Career</a></li>
+                        <li><a href="#" class="text-gray-400 text-sm hover:text-white transition">Chi siamo</a></li>
+                        <li><a href="#" class="text-gray-400 text-sm hover:text-white transition">Lavora con noi</a></li>
                         <li><a href="#" class="text-gray-400 text-sm hover:text-white transition">Blog</a></li>
-                        <li><a href="#" class="text-gray-400 text-sm hover:text-white transition">Special Offers</a></li>
+                        <li><a href="#" class="text-gray-400 text-sm hover:text-white transition">Offerte Speciali</a></li>
                     </ul>
                 </div>
 
                 <div class="lg:col-span-2">
-                    <h4 class="font-bold text-white mb-6">Help</h4>
+                    <h4 class="font-bold text-white mb-6">Supporto</h4>
                     <ul class="space-y-4">
-                        <li><a href="#" class="text-gray-400 text-sm hover:text-white transition">FAQ</a></li>
-                        <li><a href="#" class="text-gray-400 text-sm hover:text-white transition">Help Center</a></li>
+                        <li><a href="#" class="text-gray-400 text-sm hover:text-white transition cursor-disabled">FAQ</a></li>
+                        <li><a href="#" class="text-gray-400 text-sm hover:text-white transition">Contatti</a></li>
                         <li><a href="#" class="text-gray-400 text-sm hover:text-white transition">Privacy Policy</a></li>
                     </ul>
                 </div>
@@ -244,25 +244,24 @@
                 <div class="lg:col-span-2">
                     <h4 class="font-bold text-white mb-6">Partner</h4>
                     <ul class="space-y-4">
-                        <li><a href="#" class="text-gray-400 text-sm hover:text-white transition">Partner Hub</a></li>
-                        <li><a href="#" class="text-gray-400 text-sm hover:text-white transition">Affiliates</a></li>
-                        <li><a href="#" class="text-gray-400 text-sm hover:text-white transition">Advertise</a></li>
+                        <li><a href=""  class="disabled text-gray-400 text-sm hover:text-white transition">Area Partner</a></li>
+                        <li><a href="#" class="text-gray-400 text-sm hover:text-white transition">Affiliazioni</a></li>
                     </ul>
                 </div>
 
                 <div class="lg:col-span-3">
                     <div class="bg-[#2A2C34] rounded-2xl p-6 shadow-lg">
-                        <h4 class="font-bold text-white mb-4">Subscribe</h4>
+                        <h4 class="font-bold text-white mb-4">Iscriviti</h4>
                         
                         <div class="flex w-full mb-4">
-                            <input type="email" placeholder="Email address" class="w-full bg-white text-gray-800 text-sm px-4 py-2.5 rounded-l-md outline-none focus:ring-2 focus:ring-brandPrimary">
-                            <button class="bg-brandPrimary hover:bg-opacity-90 transition text-white px-4 py-2.5 rounded-r-md flex items-center justify-center">
+                            <input type="email" placeholder="Indirizzo Email" class="w-full bg-white text-gray-800 text-sm px-4 py-2.5 rounded-l-md outline-none focus:ring-2 focus:ring-brandPrimary">
+                            <button onclick="window.location.href='pages/registra.php'" class="bg-brandPrimary hover:bg-opacity-90 transition text-white px-4 py-2.5 rounded-r-md flex items-center justify-center">
                                 <i class="fa-solid fa-arrow-right"></i>
                             </button>
                         </div>
                         
                         <p class="text-[11px] text-gray-400 leading-relaxed">
-                            Hello, we are Lift Media. Our goal is to translate the positive effects from revolutionizing how companies engage with their clients & their team.
+                            Iscriviti per ricevere aggiornamenti su SkyGo e sulle nostre ultime novità.
                         </p>
                     </div>
                 </div>
@@ -271,15 +270,14 @@
 
             <div class="border-t border-gray-700 pt-8 flex justify-center items-center">
                 <div class="flex space-x-8 text-sm font-medium">
-                    <a href="#" class="text-white hover:text-gray-300 transition">Terms</a>
-                    <a href="#" class="text-white hover:text-gray-300 transition">Privacy</a>
-                    <a href="#" class="text-white hover:text-gray-300 transition">Cookies</a>
+                    <a href="https://www.icann.org/" class="text-white hover:text-gray-300 transition">Termini</a>
+                    <a href="https://www.infinityfree.com/" class="text-white hover:text-gray-300 transition">Privacy</a>
+                    <a href="https://www.iubenda.com/it/?utm_source=adwords&utm_medium=ppc&utm_campaign=%5BS%5D%20%5BItaly%5D%20TOFU%20%7C%20Search%20%7C%20Brand%20%7C%20Italy%20%7C%20Desktop&utm_term=iubenda&utm_content=597298886390&hsa_acc=1042365329&hsa_cam=938149083&hsa_grp=53600567264&hsa_ad=597298886390&hsa_src=g&hsa_tgt=kwd-336573488351&hsa_kw=iubenda&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gad_source=1&gad_campaignid=938149083&gbraid=0AAAAAD3AclOxXTlOwZeqdIRzYMWg3YE3s&gclid=CjwKCAjw-dfOBhAjEiwAq0RwI0risA734wNiScpFLwovbpJHR7XmqDc2D_UaP5RC36fmhT01KsTWfxoC_k0QAvD_BwE" class="text-white hover:text-gray-300 transition">Cookies</a>
                 </div>
             </div>
             
         </div>
     </footer>
-
 
 
     <script>

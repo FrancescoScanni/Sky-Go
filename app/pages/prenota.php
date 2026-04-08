@@ -17,9 +17,9 @@
     //info volo
     $idVolo= $_SESSION['idVolo'];
     $IATAP= $_SESSION['IATAP'];
-    $IATAA= $_SESSION['IATAA'];
-    $dataP= $_SESSION['dataP'];
-    $oraP= $_SESSION['oraP'];
+    $IATAA= $_SESSION['IATAA'] ?? '';
+    $dataP= $_SESSION['dataP'] ?? '';
+    $oraP= $_SESSION['oraP'] ?? '';
     $npasseggeri  = $_SESSION['npasseggeri'];
     $prezzo= $_SESSION['prezzo'];
 
@@ -51,6 +51,11 @@
             $posti=$_SESSION['posti'];
         }else{
             $posti=$_SESSION['posti'];
+            if(empty($posti)){
+                echo "<script>alert('Selezionare almeno un posto!'); window.location.href=\"prenota.php\"</script>"; 
+                exit;
+            }
+            
         }
 
         $numPosti = count($posti);
@@ -131,7 +136,7 @@
                     </div>
                     <div class="flex justify-between text-sm py-1">
                         <span>Bagagli:</span> 
-                        <span class="bg-gray-200 text-xs px-2 py-1 rounded"><input type="number" value="0" placeholder="" name="bagagli" max="59" min="0" required></span>
+                        <span class="bg-gray-200 text-xs px-2 py-1 rounded"><input disabled type="number" value="0" placeholder="" name="bagagli" max="59" min="0" required></span>
                     </div>
                 </div>
             

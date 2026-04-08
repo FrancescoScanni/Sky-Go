@@ -48,9 +48,9 @@
     $homepageStandard2='<a href="accedi.php" class="hover:text-brandPrimary transition">Accedi</a>
                         <a href="registra.php" class="bg-brandPrimary hover:bg-opacity-90 text-white px-6 py-2.5 rounded-lg transition shadow-md">Iscriviti</a>';
 
-    $homepageLoggato='<a href="pages/profilo.php" class="bg-brandPrimary hover:bg-opacity-90 text-white px-6 py-2.5 rounded-lg transition shadow-md">Profilo</a>
+    $homepageLoggato='<a href="#" class="bg-brandPrimary hover:bg-opacity-90 text-white px-6 py-2.5 rounded-lg transition shadow-md">Loggato!</a>
                     <a href="pages/logout.php" onclick="return confirm(\'Sei sicuro di voler uscire?\')" class="text-gray-500 hover:text-gray-800 text-sm hover:underline transition">Logout</a>';
-    $homepageLoggato2='<a href="profilo.php" class="bg-brandPrimary hover:bg-opacity-90 text-white px-6 py-2.5 rounded-lg transition shadow-md">Profilo</a>
+    $homepageLoggato2='<a href="#" class="bg-brandPrimary hover:bg-opacity-90 text-white px-6 py-2.5 rounded-lg transition shadow-md">Loggato!</a>
                     <a href="logout.php" onclick="return confirm(\'Sei sicuro di voler uscire?\')" class="text-gray-500 hover:text-gray-800 text-sm hover:underline transition">Logout</a>';
 
     //messaggio accettazione cookie

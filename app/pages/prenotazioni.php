@@ -68,7 +68,6 @@
             <th class="px-8 py-6 font-semibold">Posto</th>
             <th class="px-8 py-6 font-semibold">Passeggero (ID)</th>
             <th class="px-8 py-6 font-semibold">Bagaglio</th>
-            <th class="px-8 py-6 font-semibold">Azione</th>
           </tr>
         </thead>
         
@@ -84,7 +83,6 @@
                         echo '  <td class="px-8 py-5 text-gray-600">' . $row["IDPasseggero"] . '</td>';
                         echo '  <td class="px-8 py-5 text-gray-600">' . ($row["bagaglio"] ?? "No") . '</td>';
                         echo '  <td class="px-8 py-5">';
-                        echo '      <a href="prenota.php?ID=' . $row["ID"] . '" class="inline-block px-5 py-2 text-white bg-[#c58a80] rounded-md hover:bg-[#b57a70] transition text-sm font-medium shadow-sm text-center">Gestisci</a>';
                         echo '  </td>';
                         echo '</tr>';
                     }

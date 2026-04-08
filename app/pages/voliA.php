@@ -124,7 +124,7 @@
                             <th class="py-4 px-6 font-semibold">Partenza</th>
                             <th class="py-4 px-6 font-semibold">Arrivo</th>
                             <th class="py-4 px-6 font-semibold">Data</th>
-                            <th class="py-4 px-6 font-semibold">Totale (<?php echo $npasseggeri." pp";?>)</th>
+                            <th class="py-4 px-6 font-semibold">Totale (<?php echo $npasseggeri ." pp";?>)</th>
                             <th class="py-4 px-6 font-semibold text-center">Azione</th>
                         </tr>
                     </thead>

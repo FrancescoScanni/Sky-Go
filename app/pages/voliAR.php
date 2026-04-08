@@ -1,5 +1,6 @@
 <?php
 session_start();
+ini_set('memory_limit', '256M'); //pongo lomite a valori generabili per evitare overload
 require_once("connessioneDB.php");
 require_once("generalFunctions.php");
 
@@ -38,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //chiamo API Duffer
     if(!$err){ //commenti su quello di sola andata
             global $conn;
-            $key="duffel_test_CsswiUl9eG9CK3fhQPSEGIQcvb1a0Y-omMauyUuW0KC"; //la mia key 
+            $key="duffel_test_4hbby9qlEb5ibuY-J_GDMMkX74UTsQPEItzMl0mhFMP"; //la mia key 
             foreach($codiciArrivo as $arrivo){
                 foreach($codiciPartenza as $partenza){                        
                     $passeggeriArray = [];
@@ -201,9 +202,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 echo '  </td>';
                                 echo '</tr>';
 
-
-
-                                
+                                $_SESSION['idVolo'] = $codiceVoloAndata;
+                                $_SESSION['IATAP']=$IATAPA;
+                                $_SESSION['IATAA']=$IATAAA;
+                                $_SESSION['dataAndata']=$dataAndataStr;
+                                $_SESSION['dataRitorno']=$dataRitornoStr;
+                                $_SESSION['npasseggeri']=$npasseggeri;
+                                $_SESSION['prezzo']=$volo['total_amount'];   
                             }
                         }
                         ?>
