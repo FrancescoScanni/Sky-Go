@@ -14,6 +14,16 @@
     $resultPasseggero = $conn->query($sqlPasseggero);
     $rowPasseggero = $resultPasseggero->fetch_assoc(); 
 
+    //info volo
+    $idVolo= $_SESSION['idVolo'];
+    $IATAP= $_SESSION['IATAP'];
+    $IATAA= $_SESSION['IATAA'];
+    $dataP= $_SESSION['dataP'];
+    $oraP= $_SESSION['oraP'];
+    $npasseggeri  = $_SESSION['npasseggeri'];
+    $prezzo= $_SESSION['prezzo'];
+
+
     if($_SESSION['idVolo'] == 0) {
         header("Location: voliA.php");
         exit;
@@ -26,7 +36,6 @@
     $row=$result->fetch_assoc();
 
     //posti d checkbox
-
     if($_SERVER['REQUEST_METHOD'] == "GET"){
         if(isset($_GET["posti"])){
             $posti = $_GET["posti"];
@@ -44,14 +53,13 @@
             $posti=$_SESSION['posti'];
         }
 
-
         $numPosti = count($posti);
         foreach($posti as $posto){
             $dataPrenotazione = date("Y-m-d");
-            $IDVolo = $row['ID'];
             $IDPasseggero = $_SESSION['userID'];
-            $prenotazione = new Prenotazione($dataPrenotazione, $posto, $IDVolo, $IDPasseggero);
+            $prenotazione = new Prenotazione($dataPrenotazione, $posto, $idVolo, $IDPasseggero);
             $prenotazione->salvaPrenotazione();
+            header("Location: prenotazioni.php");
         }
         echo "Prenotazione completata con successo!";
     }
@@ -109,9 +117,9 @@
             <h2 class="text-lg font-bold mb-4 border-b pb-2">Itinerario</h2>
             
             <div class="mb-6">
-                <p class="text-xs text-gray-500 font-bold tracking-wider">ID: <?php echo $row['ID']; ?></p>
-                <p class="text-lg font-bold"><?php echo $row['IATAP']; ?> &rarr; <?php echo $row['IATAA']; ?></p>
-                <p class="text-sm text-gray-500"><?php echo $row['DataP']; ?> <br><?php echo $row['oraPartenza']; ?></p>
+                <p class="text-xs text-gray-500 font-bold tracking-wider">ID: <?php echo $idVolo; ?></p>
+                <p class="text-lg font-bold"><?php echo $IATAP; ?> &rarr; <?php echo $IATAA; ?></p>
+                <p class="text-sm text-gray-500"><?php echo $dataP; ?> <br><?php echo $oraP; ?></p>
             </div>
 
             <form action="prenota.php" method="POST">
@@ -128,11 +136,11 @@
                 </div>
             
                 <div class="bg-gray-50 p-4 rounded-lg">
-                    <div class="flex justify-between text-sm mb-1"><span>Volo</span> <span><?php echo $row['Prezzo'] * count($posti); $tasse=$row['Prezzo'] * 0.2; ?> €</span></div>
-                    <div class="flex justify-between text-sm mb-1"><span>Tasse</span> <span><?php if($row['Prezzo']>0 && count($posti)>0){ echo number_format($tasse, 2);
+                    <div class="flex justify-between text-sm mb-1"><span>Volo</span> <span><?php $tot=$prezzo * count($posti); echo $tot; $tasse=$tot * 0.05; ?> €</span></div>
+                    <div class="flex justify-between text-sm mb-1"><span>Tasse</span> <span><?php if($prezzo>0 && count($posti)>0){ echo number_format($tasse, 2);
                                                                                                     }else{ echo "0.00"; } ?> €</span></div>
                     <div class="flex justify-between font-bold border-t border-gray-300 mt-2 pt-2 text-lg">
-                        <span>Totale</span> <span class="text-orange-500"><?php if($row['Prezzo']>0 && count($posti)>0){ echo number_format(($row['Prezzo'] * count($posti)) + $tasse, 2);
+                        <span>Totale</span> <span class="text-orange-500"><?php if($prezzo>0 && count($posti)>0){ echo number_format(($prezzo * count($posti)) + $tasse, 2);
                                                                                                     }else{ echo "0.00"; } ?> €</span>
                     </div>
                 </div>

@@ -4,9 +4,6 @@
     require_once("generalFunctions.php");
 
     $err = false;
-    $partenzaErr = "";
-    $arrivoErr = "";
-
     //mostra voli solo andata
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if(!preg_match('/^[a-zA-Z]+$/', $_POST["IATAP"])){
@@ -35,20 +32,55 @@
         }
         $dataP = sanitize($_POST["dataP"]);
         $npasseggeri =sanitize($_POST["passeggeri"]);
+
+        //chiamata API
         if(!$err){
             global $conn;
-            try{
-                $lista_codici_arrivo_sql = "'" . implode("', '", $codiciArrivo) . "'";
-                $lista_codici_partenza_sql = "'" . implode("', '", $codiciPartenza) . "'";
-                //echo json_encode([$lista_codici_partenza_sql]);
-                //echo json_encode([$lista_codici_arrivo_sql]);
-                
-                $sql = "SELECT * FROM volo WHERE IATAP IN ($lista_codici_partenza_sql) AND IATAA IN ($lista_codici_arrivo_sql) AND DataP = '$dataP'";
-                $result = $conn->query($sql);
+            $key="duffel_test_CsswiUl9eG9CK3fhQPSEGIQcvb1a0Y-omMauyUuW0KC"; //la mia key 
+            foreach($codiciArrivo as $arrivo){
+                foreach($codiciPartenza as $partenza){                        
+                    $passeggeriArray = [];
+                            for ($i = 0; $i < $npasseggeri; $i++) {
+                                $passeggeriArray[] = ["type" => "adult"]; //indico il tipo di passeggero
+                    }
+                        //setto i dati da passare secondo il modello impostato di duffel
+                    $payload = json_encode([
+                            "data" => [
+                                "slices" => [
+                                    [   "origin" => $partenza,
+                                        "destination" => $arrivo,
+                                        "departure_date" => $dataP   ]
+                                ],
+                                "passengers" => $passeggeriArray,
+                                "return_offers" => true //restituisce subito i voli trovati
+                            ]
+                    ]);
+                        //impostazione chiamata api
+                    $opzioniDuffel = [
+                            'http' => [
+                                'method' => 'POST',
+                                'header' => "Authorization: Bearer " . $key . "\r\n" .
+                                            "Duffel-Version: v2\r\n" .
+                                            "Content-Type: application/json\r\n" .
+                                            "Accept: application/json\r\n",
+                                'content' => $payload,
+                                'ignore_errors' => true
+                            ]
+                    ];
 
-            } catch(Exception $e){
-                echo json_encode(["error" => "Qualcosa è andato storto: " . $e->getMessage()]);
-                exit;
+                    //chiamo url API di Duffel
+                    $urlRicerca = "https://api.duffel.com/air/offer_requests";
+                    $rispostaVoli = @file_get_contents($urlRicerca, false, stream_context_create($opzioniDuffel)); //richiesta effettiva
+
+                    //decodifico i risultati e prendo solo i primi 10 per evitare di sovraccaricare la pagina
+                    $datiDecodificati = json_decode($rispostaVoli, true);
+
+                    //salvo negli arry
+                    if(isset($datiDecodificati['data']['offers'])){
+                            $risultatiVoli = $datiDecodificati['data']['offers'];
+                            $risultati = array_slice($risultatiVoli, 0, 10);
+                    }
+                }
             }
         }
     }
@@ -63,6 +95,7 @@
 </head>
 <body class="bg-[#f8f9fa] font-sans antialiased text-gray-800">
 
+
     <nav class="w-full bg-white/90 backdrop-blur-sm shadow-sm py-4 px-8 flex justify-between items-center sticky top-0 z-50">
         <div class="text-2xl font-extrabold text-gray-700 tracking-wide">Sky&GO</div>
         <ul class="hidden md:flex space-x-8 font-semibold text-gray-600 text-sm">
@@ -76,54 +109,67 @@
             <a href="#" class="bg-[#c88b80] hover:bg-[#b0786d] text-white px-5 py-2 rounded-xl font-semibold text-sm transition shadow-md">Iscriviti</a>
         </div>
     </nav>
-
     <div class="max-w-6xl mx-auto mt-12 mb-20 px-4">
-        
         <div class="mb-8">
             <h1 class="text-3xl font-bold text-gray-800">Risultati della tua ricerca</h1>
             <p class="text-gray-500 mt-2">Ecco i voli disponibili per le date selezionate.</p>
         </div>
-
         <div class="bg-white shadow-lg rounded-3xl overflow-hidden border border-gray-100">
             <div class="overflow-x-auto">
                 <table class="w-full text-left border-collapse">
                     <thead>
                         <tr class="bg-gray-50 text-gray-500 text-sm uppercase tracking-wider">
                             <th class="py-4 px-6 font-semibold">Codice Volo</th>
+                            <th class="py-4 px-6 font-semibold">Compagnia</th>
                             <th class="py-4 px-6 font-semibold">Partenza</th>
                             <th class="py-4 px-6 font-semibold">Arrivo</th>
                             <th class="py-4 px-6 font-semibold">Data</th>
-                            <th class="py-4 px-6 font-semibold">Prezzo (pp)</th>
+                            <th class="py-4 px-6 font-semibold">Totale (<?php echo $npasseggeri." pp";?>)</th>
                             <th class="py-4 px-6 font-semibold text-center">Azione</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-gray-100">
-
-
                         <?php
-                        if ($result->num_rows > 0) {
-                            while($row = $result->fetch_assoc()) {
-                                echo '<tr class="hover:bg-gray-50 transition duration-150 ease-in-out">';
-                                echo '  <td class="py-4 px-6 font-bold text-gray-700">' .$row["ID"]. '</td>';
-                                echo '  <td class="py-4 px-6 text-gray-600">' .$row["IATAP"]. '</td>';
-                                echo '  <td class="py-4 px-6 text-gray-600">' .$row["IATAA"]. '</td>';
-                                echo '  <td class="py-4 px-6 text-gray-500 text-sm">' .$row["DataP"]. '</td>';
-                                echo '  <td class="py-4 px-6 font-bold text-[#c88b80]">€' .$row["Prezzo"]. '</td>';
-                                echo '  <td class="py-4 px-6 text-center">';
-                                echo '  <a href="prenota.php?ID=' . $row["ID"] . '" class="bg-[#c88b80] hover:bg-[#b0786d] text-white px-4 py-2 rounded-xl text-sm font-semibold transition shadow-sm">Prenota</a>';
-                                echo '  </td>';
-                                echo '</tr>';
-                                $_SESSION['idVolo'] = $row["ID"];
-                            }
-                        } else {
-                            echo '<tr><td colspan="6" class="py-8 text-center text-gray-500">Nessun volo trovato per questa ricerca.</td></tr>';
-                        }
+                            if(!empty($risultati)){
+                                foreach ($risultati as $volo){
+                                    $tratta = $volo['slices'][0]; 
+                                    $nomeCompagnia = $volo['owner']['name'];
+                                    $aereo = $volo['slices'][0]['segments'][0];
+                                    $siglaOperatore = $aereo['operating_carrier']['iata_code'];
+                                    $numeroVolo = $aereo['operating_carrier_flight_number'];
+                                    $codiceVolo = $siglaOperatore . " " . $numeroVolo;
+                                    $partenzaAereo = $tratta['segments'][0];
+                                    $arrivoAereo = end($tratta['segments']);
+                                    $IATAP = $partenzaAereo['origin']['iata_code'];
+                                    $IATAA = $arrivoAereo['destination']['iata_code'];
+                                    $oraP = date("H:i", strtotime($partenzaAereo['departing_at']));
+
+
+                                    echo '<tr class="hover:bg-gray-50 transition duration-150 ease-in-out">';
+                                    echo '  <td class="py-4 px-6 font-bold text-gray-700">' .$codiceVolo. '</td>';
+                                    echo '  <td class="py-4 px-6 text-gray-600">' .$nomeCompagnia. '</td>';
+                                    echo '  <td class="py-4 px-6 text-gray-600">' .$IATAP. '</td>';
+                                    echo '  <td class="py-4 px-6 text-gray-600">' .$IATAA. '</td>';
+                                    echo '  <td class="py-4 px-6 text-gray-500 text-sm">' .$oraP. '</td>';
+                                    echo '  <td class="py-4 px-6 font-bold text-[#c88b80]">€' .$volo['total_amount']. '</td>';
+                                    echo '  <td class="py-4 px-6 text-center">';
+
+                                    echo '  <a href="prenota.php" class="bg-[#c88b80] hover:bg-[#b0786d] text-white px-4 py-2 rounded-lg font-semibold text-sm transition shadow-md">Prenota</a>';
+                                    $_SESSION['idVolo'] = $codiceVolo;
+                                    $_SESSION['IATAP']=$IATAP;
+                                    $_SESSION['IATAA']=$IATAA;
+                                    $_SESSION['dataP']=$dataP;
+                                    $_SESSION['npasseggeri']=$npasseggeri;
+                                    $_SESSION['totale']=$volo['total_amount'];
+                                    $_SESSION['oraP']=$oraP;
+                                    $_SESSION['prezzo']=$volo['total_amount'];
+                                }
+                            }   
                         ?>
-                        </tbody>
+                    </tbody>
                 </table>
             </div>
         </div>
     </div>
-
 </body>
 </html>

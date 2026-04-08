@@ -43,6 +43,8 @@
             $output = $conn->query($sql);
             if($output->num_rows >0){
                 $row=$output->fetch_assoc();
+                //echo $row["Password"];
+                //echo $password;
                 if(password_verify($password, $row["Password"])){
                     $_SESSION['loggato']=true;
                     $_SESSION['userID']=$row['ID'];
