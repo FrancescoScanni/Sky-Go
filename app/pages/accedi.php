@@ -10,7 +10,7 @@
             $passwordErr="*Inserisci una password";
             $err=true;
         }else{
-            $password=sanitize($_POST["password"]);
+            $password=$_POST["password"];
         }
 
         if(!$err){
@@ -18,6 +18,7 @@
             try{
                 if(Passeggero::logga($mail, $password)){ //controllo e loggo
                     header("Location: ../index.php"); //loggato con succsso
+                    exit;
                 }else{
                     echo $loginFallito; //log fallito
                 }

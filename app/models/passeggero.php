@@ -1,4 +1,5 @@
 <?php
+    
     require_once("../models/passeggero.php");
     require_once("generalFunctions.php");
     require_once("connessioneDB.php");
@@ -48,10 +49,9 @@
                 if(password_verify($password, $row["Password"])){
                     $_SESSION['loggato']=true;
                     $_SESSION['userID']=$row['ID'];
-                    header("Location: ../index.php");
-                    exit;
+                    return true;
                 }else{
-                    echo $loginFallito;
+                    return false;
                 }
             }
         }
