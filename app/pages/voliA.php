@@ -36,7 +36,7 @@
         //chiamata API
         if(!$err){
             global $conn;
-            $key;//apiiiiii; //la mia key 
+            $key="duffel_test_CsswiUl9eG9CK3fhQPSEGIQcvb1a0Y-omMauyUuW0KC"; //la mia key 
             foreach($codiciArrivo as $arrivo){
                 foreach($codiciPartenza as $partenza){                        
                     $passeggeriArray = [];
