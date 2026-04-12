@@ -267,8 +267,8 @@
             <div class="border-t border-gray-700 pt-8 flex justify-center items-center">
                 <div class="flex space-x-8 text-sm font-medium">
                     <a href="https://www.icann.org/" class="text-white hover:text-gray-300 transition">Termini</a>
-                    <a href="https://www.infinityfree.com/" class="text-white hover:text-gray-300 transition">Privacy</a>
-                    <a href="https://www.iubenda.com/it/?utm_source=adwords&utm_medium=ppc&utm_campaign=%5BS%5D%20%5BItaly%5D%20TOFU%20%7C%20Search%20%7C%20Brand%20%7C%20Italy%20%7C%20Desktop&utm_term=iubenda&utm_content=597298886390&hsa_acc=1042365329&hsa_cam=938149083&hsa_grp=53600567264&hsa_ad=597298886390&hsa_src=g&hsa_tgt=kwd-336573488351&hsa_kw=iubenda&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gad_source=1&gad_campaignid=938149083&gbraid=0AAAAAD3AclOxXTlOwZeqdIRzYMWg3YE3s&gclid=CjwKCAjw-dfOBhAjEiwAq0RwI0risA734wNiScpFLwovbpJHR7XmqDc2D_UaP5RC36fmhT01KsTWfxoC_k0QAvD_BwE" class="text-white hover:text-gray-300 transition">Cookies</a>
+                    <a href="https://www.iubenda.com/privacy-policy/34539065/cookie-policy" class="text-white hover:text-gray-300 transition">Privacy</a>
+                    <a href="https://www.iubenda.com/privacy-policy/34539065" class="text-white hover:text-gray-300 transition">Cookies</a>
                 </div>
             </div>
             
