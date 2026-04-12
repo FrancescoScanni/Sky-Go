@@ -57,7 +57,6 @@
             }
             
         }
-
         $numPosti = count($posti);
         foreach($posti as $posto){
             $dataPrenotazione = date("Y-m-d");

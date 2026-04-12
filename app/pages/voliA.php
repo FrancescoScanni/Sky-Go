@@ -1,7 +1,10 @@
 <?php
     session_start();
+    ini_set('memory_limit', '256M'); //pongo lomite a valori generabili per evitare overload
     require_once("connessioneDB.php");
     require_once("generalFunctions.php");
+    require_once("../api/apiCall.php");
+    
 
     $err = false;
     //mostra voli solo andata
@@ -35,53 +38,7 @@
 
         //chiamata API
         if(!$err){
-            global $conn;
-            $key="duffel_test_CsswiUl9eG9CK3fhQPSEGIQcvb1a0Y-omMauyUuW0KC"; //la mia key 
-            foreach($codiciArrivo as $arrivo){
-                foreach($codiciPartenza as $partenza){                        
-                    $passeggeriArray = [];
-                            for ($i = 0; $i < $npasseggeri; $i++) {
-                                $passeggeriArray[] = ["type" => "adult"]; //indico il tipo di passeggero
-                    }
-                        //setto i dati da passare secondo il modello impostato di duffel
-                    $payload = json_encode([
-                            "data" => [
-                                "slices" => [
-                                    [   "origin" => $partenza,
-                                        "destination" => $arrivo,
-                                        "departure_date" => $dataP   ]
-                                ],
-                                "passengers" => $passeggeriArray,
-                                "return_offers" => true //restituisce subito i voli trovati
-                            ]
-                    ]);
-                        //impostazione chiamata api
-                    $opzioniDuffel = [
-                            'http' => [
-                                'method' => 'POST',
-                                'header' => "Authorization: Bearer " . $key . "\r\n" .
-                                            "Duffel-Version: v2\r\n" .
-                                            "Content-Type: application/json\r\n" .
-                                            "Accept: application/json\r\n",
-                                'content' => $payload,
-                                'ignore_errors' => true
-                            ]
-                    ];
-
-                    //chiamo url API di Duffel
-                    $urlRicerca = "https://api.duffel.com/air/offer_requests";
-                    $rispostaVoli = @file_get_contents($urlRicerca, false, stream_context_create($opzioniDuffel)); //richiesta effettiva
-
-                    //decodifico i risultati e prendo solo i primi 10 per evitare di sovraccaricare la pagina
-                    $datiDecodificati = json_decode($rispostaVoli, true);
-
-                    //salvo negli arry
-                    if(isset($datiDecodificati['data']['offers'])){
-                            $risultatiVoli = $datiDecodificati['data']['offers'];
-                            $risultati = array_slice($risultatiVoli, 0, 10);
-                    }
-                }
-            }
+            $risultati=apiAndata($codiciArrivo, $codiciPartenza, $npasseggeri, $dataP, $key);         
         }
     }
 ?>
@@ -92,11 +49,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sky&GO - Risultati Ricerca</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandPrimary: '#C48B7D', /* Il colore salmone/pesca dei bottoni */
+                        searchBg: '#F3F5F6',     /* Il grigio chiarissimo del box di ricerca */
+                        inputBg: '#E4EBEC'       /* Il grigio degli input field */
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
 </head>
+
 <body class="bg-[#f8f9fa] font-sans antialiased text-gray-800">
-
-
-    <nav class="w-full bg-white/90 backdrop-blur-sm shadow-sm py-4 px-8 flex justify-between items-center sticky top-0 z-50">
+    <nav
+        class="w-full bg-white/90 backdrop-blur-sm shadow-sm py-4 px-8 flex justify-between items-center sticky top-0 z-50">
         <div class="text-2xl font-extrabold text-gray-700 tracking-wide">Sky&GO</div>
         <ul class="hidden md:flex space-x-8 font-semibold text-gray-600 text-sm">
             <a href="../index.php" class="hover:text-[#c88b80] cursor-pointer transition">Home</a>
@@ -104,9 +77,14 @@
             <a href="accedi.php" class="hover:text-[#c88b80] cursor-pointer transition">Logs</a>
             <a href="../index.php#footer" class="hover:text-[#c88b80] cursor-pointer transition">Contatti</a>
         </ul>
-        <div class="space-x-4 flex items-center">
-            <a href="#" class="font-semibold text-sm text-gray-700 hover:text-[#c88b80] transition">Accedi</a>
-            <a href="#" class="bg-[#c88b80] hover:bg-[#b0786d] text-white px-5 py-2 rounded-xl font-semibold text-sm transition shadow-md">Iscriviti</a>
+        <div id="logBox" class="flex items-center space-x-6 text-sm font-semibold text-gray-800">
+                <?php
+                    if(isset($_SESSION['loggato'])&& $_SESSION['loggato']===true){
+                        echo $homepageLoggato2;
+                    }else{
+                        echo $homepageStandard2;
+                    }
+                ?>
         </div>
     </nav>
     <div class="max-w-6xl mx-auto mt-12 mb-20 px-4">

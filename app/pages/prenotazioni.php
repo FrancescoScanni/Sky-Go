@@ -58,15 +58,14 @@
     <h1 class="text-3xl font-bold text-slate-800 mb-2">Le tue prenotazioni</h1>
     <p class="text-gray-500 mb-10">Ecco lo storico di tutti i voli che hai prenotato.</p>
 
-    <div class="bg-white rounded-3xl shadow-[0_4px_25px_-5px_rgba(0,0,0,0.05)] overflow-hidden">
-      <table class="w-full text-left border-collapse">
+    <div class="w-[65vw] bg-white rounded-3xl shadow-[0_4px_25px_-5px_rgba(0,0,0,0.05)] overflow-hidden">
+      <table class="w-[80vw] text-left border-collapse">
         
         <thead>
           <tr class="text-xs text-gray-500 uppercase tracking-wider border-b border-gray-100 bg-white">
             <th class="px-8 py-6 font-semibold">Data Prenotazione</th>
             <th class="px-8 py-6 font-semibold">Codice Volo</th>
             <th class="px-8 py-6 font-semibold">Posto</th>
-            <th class="px-8 py-6 font-semibold">Passeggero (ID)</th>
             <th class="px-8 py-6 font-semibold">Bagaglio</th>
           </tr>
         </thead>
@@ -80,7 +79,6 @@
                         echo '  <td class="px-8 py-5 text-gray-400">' . $row["DataPrenotazione"] . '</td>';
                         echo '  <td class="px-8 py-5 font-bold text-slate-800">' . $row["IDVolo"] . '</td>';
                         echo '  <td class="px-8 py-5 text-gray-600">' . $row["Posto"] . '</td>';
-                        echo '  <td class="px-8 py-5 text-gray-600">' . $row["IDPasseggero"] . '</td>';
                         echo '  <td class="px-8 py-5 text-gray-600">' . ($row["bagaglio"] ?? "No") . '</td>';
                         echo '  <td class="px-8 py-5">';
                         echo '  </td>';

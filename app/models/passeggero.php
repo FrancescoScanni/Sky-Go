@@ -26,18 +26,24 @@
             $this->password = password_hash($password, PASSWORD_DEFAULT);         
         }
 
-
+        //salvataggio
         public function salva(){
-            global $conn, $registrazioneSuccesso;
+            global $conn, $registrazioneSuccesso, $giaPresente;
             $sql = "INSERT INTO passeggero (nome, cognome, genere, telefono, mail, data, password)
                     VALUES ('$this->nome', '$this->cognome', '$this->genere', $this->telefono, '$this->mail', '$this->data', '$this->password')";
-            if ($conn->query($sql) === TRUE) {
+            $sqlEsiste="SELECT * FROM passeggero WHERE mail='$this->mail'"; //controllo se è già presente
+            $esiste=$conn->query($sqlEsiste);
+            if ($esiste->num_rows==0) {
+                $conn->query($sql);
                 echo $registrazioneSuccesso;
-                } else {
-                echo "Error: " . $sql . "<br>" . $conn->error;
+                return true; 
+            }
+            else {
+                return false;
             }
         } 
 
+        //funzione richiamat SU accedi
         public static function logga($mail, $password){
             global $conn, $loginFallito;
             $sql = "SELECT * FROM passeggero WHERE Mail='$mail'";
@@ -56,6 +62,7 @@
             }
         }
 
+        //logout utente
         public static function logout(){
             session_destroy();
         }

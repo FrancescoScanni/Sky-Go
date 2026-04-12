@@ -34,6 +34,12 @@
                                 </div>
                             </div>';
 
+    $giaPresente= '<div onclick="this.remove()" class="fixed top-10 right-5 z-50 animate-bounce">
+                                <div class="bg-white border-l-4 border-green-500 shadow-lg p-4 flex items-center space-x-3 rounded-r-lg">
+                                    <div class="text-gray-800 font-medium">Utente già presente. Accedi</div>
+                                </div>
+                            </div>'; 
+
     $loginFallito= '<div onclick="this.remove()" class="fixed top-10 right-5 z-50 animate-bounce">
                         <div class="bg-white border-l-4 border-red-500 shadow-lg p-4 flex items-center space-x-3 rounded-r-lg">
                             <span class="text-red-500 font-bold text-xl">✗</span>

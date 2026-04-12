@@ -1,7 +1,7 @@
 <?php
     $servername = "mysql_db";
-    $username = "root";
-    $password = "rootpassword";
+    $username = "app_user";
+    $password = "app_password";
     $dbname = "SkyGo";
 
     //Connessione creata

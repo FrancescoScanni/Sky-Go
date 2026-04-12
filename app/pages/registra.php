@@ -28,7 +28,7 @@
         }else{
             $mail=sanitize($_POST["mail"]);
         }
-        if(empty($_POST["telefono"])){
+        if(empty($_POST["telefono"]) || !preg_match('/^[0-9]{9,11}$/',$_POST["telefono"])){
             $telefonoErr="valore non accettato";
             $err=true;
         }else{
@@ -58,8 +58,12 @@
             $passeggero=new Passeggero($nome,$cognome,$mail,$telefono,$data,$genere,$password);
             try{
                 //salvo il nuovo passeggero nel DB
-                $passeggero->salva();
-                $_SESSION['registrato']=true;
+                if($passeggero->salva()){
+                    $_SESSION['registrato']=true;
+                }else{
+                    echo $giaPresente;
+                }
+                
             }catch(Exception $e){
                 echo $e;
                 exit;
@@ -80,9 +84,7 @@
     <link rel="stylesheet" href="../static/css/form.css">
     <link rel="stylesheet" href="../static/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-
     <script src="https://cdn.tailwindcss.com"></script>
-    
     <script>
         tailwind.config = {
             theme: {
@@ -122,7 +124,6 @@
             <h2 class="text-2xl font-bold text-gray-800">Benvenuto a bordo!</h2>
             <p class="text-sm text-gray-500 mt-2">Completa i tuoi dati per creare l'account.</p>
         </div>
-
 
 
         <!--Form registrazione-->

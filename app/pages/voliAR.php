@@ -1,100 +1,46 @@
 <?php
-session_start();
-ini_set('memory_limit', '256M'); //pongo lomite a valori generabili per evitare overload
-require_once("connessioneDB.php");
-require_once("generalFunctions.php");
+    session_start();
+    ini_set('memory_limit', '256M'); //pongo lomite a valori generabili per evitare overload
+    require_once("connessioneDB.php");
+    require_once("generalFunctions.php");
+    require_once("../api/apiCall.php");
 
-$err = false;
+    $err = false;
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    //ANDATA
-    if (!preg_match('/^[a-zA-Z]+$/', $_POST["IATAP"])) {
-        $err = true;
-    } else {
-        $partenza = sanitize($_POST["IATAP"]);
-        if (strlen($partenza) > 3) {
-            $codiciPartenza = aeroportiDaCitta($partenza);
-            $codiciPartenza = aeroportiDaCitta($partenza);
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        //ANDATA
+        if (!preg_match('/^[a-zA-Z]+$/', $_POST["IATAP"])) {
+            $err = true;
         } else {
-            $codiciPartenza = [$partenza];
-        }
-    }
-    //ARRIVO
-    if (!preg_match('/^[a-zA-Z]+$/', $_POST["IATAA"])) {
-        $arrivoErr = "*Inserisci un aeroporto di arrivo. ";
-        $err = true;
-    } else {
-        $arrivo = sanitize($_POST["IATAA"]);
-        if (strlen($arrivo) > 3) { //se è un codice IATA, lo uso direttamente
-            $codiciArrivo = aeroportiDaCitta($arrivo);
-        } else {
-            $codiciArrivo = [$arrivo]; //altrimenti lo considero un codice IATA
-        }
-    }
-
-    $dataP = sanitize($_POST["dataP"]);
-    $dataR = sanitize($_POST["dataR"]);
-    $npasseggeri = sanitize($_POST["passeggeri"]);
-
-    //chiamo API Duffer
-    if(!$err){ //commenti su quello di sola andata
-            global $conn;
-            $key="duffel_test_4hbby9qlEb5ibuY-J_GDMMkX74UTsQPEItzMl0mhFMP"; //la mia key 
-            foreach($codiciArrivo as $arrivo){
-                foreach($codiciPartenza as $partenza){                        
-                    $passeggeriArray = [];
-                            for ($i = 0; $i < $npasseggeri; $i++) {
-                                $passeggeriArray[] = ["type" => "adult"]; //indico il tipo di passeggero
-                    }
-                    $payload = json_encode([
-                            "data" => [
-                                "slices" => [
-                                    //ANDATA
-                                    [   
-                                        "origin" => $partenza,      
-                                        "destination" => $arrivo,    
-                                        "departure_date" => $dataP
-                                    ],
-                                    //Ritorno
-                                    [   
-                                        "origin" => $arrivo,        
-                                        "destination" => $partenza,
-                                        "departure_date" => $dataR 
-                                    ]
-                                ],
-                                "passengers" => $passeggeriArray,
-                                "return_offers" => true
-                            ]
-                    ]);
-                    $opzioniDuffel = [
-                            'http' => [
-                                'method' => 'POST',
-                                'header' => "Authorization: Bearer " . $key . "\r\n" .
-                                            "Duffel-Version: v2\r\n" .
-                                            "Content-Type: application/json\r\n" .
-                                            "Accept: application/json\r\n",
-                                'content' => $payload,
-                                'ignore_errors' => true
-                            ]
-                    ];
-
-                    //chiamo url API di Duffel
-                    $urlRicerca = "https://api.duffel.com/air/offer_requests";
-                    $rispostaVoli = @file_get_contents($urlRicerca, false, stream_context_create($opzioniDuffel)); //richiesta effettiva
-
-                    //decodifico i risultati e prendo solo i primi 10 per evitare di sovraccaricare la pagina
-                    $datiDecodificati = json_decode($rispostaVoli, true);
-
-                    //salvo negli arry
-                    if(isset($datiDecodificati['data']['offers'])){
-                            $risultatiVoli = $datiDecodificati['data']['offers'];
-                            $risultati = array_slice($risultatiVoli, 0, 10);
-                    }
-                }
+            $partenza = sanitize($_POST["IATAP"]);
+            if (strlen($partenza) > 3) {
+                $codiciPartenza = aeroportiDaCitta($partenza);
+                $codiciPartenza = aeroportiDaCitta($partenza);
+            } else {
+                $codiciPartenza = [$partenza];
             }
         }
-}
+        //ARRIVO
+        if (!preg_match('/^[a-zA-Z]+$/', $_POST["IATAA"])) {
+            $arrivoErr = "*Inserisci un aeroporto di arrivo. ";
+            $err = true;
+        } else {
+            $arrivo = sanitize($_POST["IATAA"]);
+            if (strlen($arrivo) > 3) { //se è un codice IATA, lo uso direttamente
+                $codiciArrivo = aeroportiDaCitta($arrivo);
+            } else {
+                $codiciArrivo = [$arrivo]; //altrimenti lo considero un codice IATA
+            }
+        }
+        $dataP = sanitize($_POST["dataP"]);
+        $dataR = sanitize($_POST["dataR"]);
+        $npasseggeri = sanitize($_POST["passeggeri"]);
 
+        //chiamo API Duffer
+        if(!$err){ //commenti su quello di sola andata
+                $risultati=apiAR($codiciArrivo, $codiciPartenza, $npasseggeri, $dataP, $dataR, $key);
+            }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="it">
@@ -103,6 +49,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sky&GO - Risultati Ricerca</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandPrimary: '#C48B7D', /* Il colore salmone/pesca dei bottoni */
+                        searchBg: '#F3F5F6',     /* Il grigio chiarissimo del box di ricerca */
+                        inputBg: '#E4EBEC'       /* Il grigio degli input field */
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 
 <body class="bg-[#f8f9fa] font-sans antialiased text-gray-800">
@@ -115,10 +77,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <a href="accedi.php" class="hover:text-[#c88b80] cursor-pointer transition">Logs</a>
             <a href="../index.php#footer" class="hover:text-[#c88b80] cursor-pointer transition">Contatti</a>
         </ul>
-        <div class="space-x-4 flex items-center">
-            <a href="#" class="font-semibold text-sm text-gray-700 hover:text-[#c88b80] transition">Accedi</a>
-            <a href="#"
-                class="bg-[#c88b80] hover:bg-[#b0786d] text-white px-5 py-2 rounded-xl font-semibold text-sm transition shadow-md">Iscriviti</a>
+        <div id="logBox" class="flex items-center space-x-6 text-sm font-semibold text-gray-800">
+                <?php
+                    if(isset($_SESSION['loggato'])&& $_SESSION['loggato']===true){
+                        echo $homepageLoggato2;
+                    }else{
+                        echo $homepageStandard2;
+                    }
+                ?>
         </div>
     </nav>
     <div class="max-w-6xl mx-auto mt-12 mb-20 px-4">
@@ -142,7 +108,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <tbody class="divide-y divide-gray-100">
                         
                         <?php
-
                         //voli di AR
                         if (!empty($risultati)) {
                             foreach ($risultati as $volo) {

@@ -46,13 +46,12 @@
             }
         }
     </script>
-
 </head>
 
 <body class="index">
     
     <div class="absolute inset-0 bg-black/20"></div>
-
+    <!--//HEADER e ACCESSI-->
     <div class="relative w-full h-full flex flex-col justify-between pt-6 pb-12 px-4 md:px-12">
 
         <!--Navbar / header-->
@@ -105,7 +104,7 @@
         ?>
     </div>
 
-    <!--Hero intermedio / Perchè sceliere noi-->
+    <!--Hero intermedio-->
     <div id="hero2" class="w-full bg-white text-slate-800">
         <div class="max-w-7xl mx-auto px-6 py-20 flex flex-col lg:flex-row items-center gap-16 lg:gap-24 overflow-hidden">
             
@@ -144,7 +143,7 @@
 
                         <div class="flex justify-between items-center">
                             <div class="font-bold text-textDark text-sm">
-                                €139.00 <span class="font-normal text-[10px] text-textGray">Notte</span>
+                                €139.00 <span class="font-normal text-[10px] text-textGray"></span>
                             </div>
                             <div class="flex items-center space-x-1 text-textGray">
                                 <i class="fa-solid fa-location-dot text-[10px] text-brandPrimary"></i>
@@ -226,16 +225,13 @@
                     <h4 class="font-bold text-white mb-6">Prodotto</h4>
                     <ul class="space-y-4">
                         <li><a href="#" class="text-gray-400 text-sm hover:text-white transition">Chi siamo</a></li>
-                        <li><a href="#" class="text-gray-400 text-sm hover:text-white transition">Lavora con noi</a></li>
-                        <li><a href="#" class="text-gray-400 text-sm hover:text-white transition">Blog</a></li>
-                        <li><a href="#" class="text-gray-400 text-sm hover:text-white transition">Offerte Speciali</a></li>
+                        <li><a href="#hero2" class="text-gray-400 text-sm hover:text-white transition">Ricerca voli</a></li>
                     </ul>
                 </div>
 
                 <div class="lg:col-span-2">
                     <h4 class="font-bold text-white mb-6">Supporto</h4>
                     <ul class="space-y-4">
-                        <li><a href="#" class="text-gray-400 text-sm hover:text-white transition cursor-disabled">FAQ</a></li>
                         <li><a href="#" class="text-gray-400 text-sm hover:text-white transition">Contatti</a></li>
                         <li><a href="#" class="text-gray-400 text-sm hover:text-white transition">Privacy Policy</a></li>
                     </ul>
@@ -244,8 +240,8 @@
                 <div class="lg:col-span-2">
                     <h4 class="font-bold text-white mb-6">Partner</h4>
                     <ul class="space-y-4">
-                        <li><a href=""  class="disabled text-gray-400 text-sm hover:text-white transition">Area Partner</a></li>
-                        <li><a href="#" class="text-gray-400 text-sm hover:text-white transition">Affiliazioni</a></li>
+                        <li><a href="https://www.panettipitagora.edu.it/"  class="disabled text-gray-400 text-sm hover:text-white transition">Scuola</a></li>
+                        <li><a href="https://www.panettipitagora.edu.it/" class="text-gray-400 text-sm hover:text-white transition">ITT Panetti, BA</a></li>
                     </ul>
                 </div>
 
