@@ -27,7 +27,8 @@ SET time_zone = "+00:00";
 -- Struttura della tabella `aereo`
 --
 
-USE SkyGo
+CREATE DATABASE SkyGo;
+USE SkyGo;
 
 CREATE TABLE `aereo` (
   `ID` int NOT NULL,
