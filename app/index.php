@@ -20,11 +20,11 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sky&GO - Trova voli economici a costo zero</title>
+    <title>Sky&GO - Find cheap flights at zero cost</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="static/css/style.css">
@@ -51,26 +51,23 @@
 <body class="index">
     
     <div class="absolute inset-0 bg-black/20"></div>
-    <!--//HEADER e ACCESSI-->
     <div class="relative w-full h-full flex flex-col justify-between pt-6 pb-12 px-4 md:px-12">
 
-        <!--Navbar / header-->
         <nav class="w-full max-w-7xl mx-auto bg-white/30 backdrop-blur-md rounded-2xl px-8 py-4 flex justify-between items-center shadow-sm">
             <div class="text-white text-3xl font-bold tracking-wider drop-shadow-md">Sky&GO</div>
             
-            <!--Menu navbar-->
             <div class="hidden md:flex space-x-10 text-gray-800 font-semibold text-sm">
                 <a href="#titoli" class="hover:text-brandPrimary transition">Home</a>
-                <a href="#hero2" class="hover:text-brandPrimary transition">Info</a>
+                <a href="#hero2" class="hover:text-brandPrimary transition">About</a>
                 <?php
                     if($_SESSION['loggato']===true){
-                        echo '<a href="pages/prenotazioni.php" class="hover:text-brandPrimary transition">Prenotazioni</a>';
+                        echo '<a href="pages/prenotazioni.php" class="hover:text-brandPrimary transition">Bookings</a>';
                     }else{
-                        echo '<a class="hover:text-brandPrimary transition cursor-not-allowed disabled">Prenotazioni</a>';
+                        echo '<a class="hover:text-brandPrimary transition cursor-not-allowed disabled">Bookings</a>';
                     }
                 ?>
 
-                <a href="#footer" class="hover:text-brandPrimary transition">Contatti</a>
+                <a href="#footer" class="hover:text-brandPrimary transition">Contact</a>
             </div>
             
             <div id="logBox" class="flex items-center space-x-6 text-sm font-semibold text-gray-800">
@@ -84,17 +81,15 @@
             </div>
         </nav>
 
-        <!--Titoli e banner-->
         <div id="titoli" class="flex flex-col items-center justify-center text-center mt-12 md:mt-0 flex-grow">
             <h1 class="text-4xl md:text-5xl lg:text-[54px] text-white font-bold mb-6 max-w-4xl leading-tight drop-shadow-lg" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
-                Sky&Go: trova facilmente voli economici e parti quando vuoi.
+                Sky&Go: easily find cheap flights and leave whenever you want.
             </h1>
             <p class="text-white text-base md:text-lg max-w-3xl drop-shadow-md font-medium" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">
-                Sky&Go è una piattaforma pensata per rendere la ricerca di voli economici semplice e veloce. Con pochi passaggi puoi confrontare diverse offerte. L'obiettivo è aiutarti a viaggiare di più, scegliendo il volo giusto al momento giusto e al miglior prezzo disponibile.
+                Sky&Go is a platform designed to make searching for cheap flights quick and easy. With just a few steps, you can compare different offers. Our goal is to help you travel more, choosing the right flight at the right time and at the best available price.
             </p>
         </div>
 
-        <!--Sezione di ricerca voli-->
         <?php
             if($_SESSION['AR']===false){
                 echo $andataRitorno;
@@ -104,13 +99,12 @@
         ?>
     </div>
 
-    <!--Hero intermedio-->
     <div id="hero2" class="w-full bg-white text-slate-800">
         <div class="max-w-7xl mx-auto px-6 py-20 flex flex-col lg:flex-row items-center gap-16 lg:gap-24 overflow-hidden">
             
             <div class="relative w-full max-w-[420px] shrink-0 mx-auto lg:mx-0">
                 
-                <img src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Paesaggio" class="w-full h-[480px] object-cover rounded-[32px] shadow-sm">
+                <img src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Landscape" class="w-full h-[480px] object-cover rounded-[32px] shadow-sm">
 
                 <div class="absolute bottom-8 -left-4 md:-left-8 bg-white px-5 py-2.5 rounded-full shadow-lg flex items-center space-x-2">
                     <i class="fa-solid fa-star text-yellow-400 text-lg"></i>
@@ -120,7 +114,7 @@
                 <div class="absolute top-12 -right-8 md:-right-16 bg-white p-3 rounded-[24px] shadow-2xl w-[260px]">
                     
                     <div class="relative">
-                        <img src="https://static.vecteezy.com/ti/foto-gratuito/p2/3023862-vista-in-volo-dalla-finestra-con-sfondo-tramonto-sbalorditivo-gratuito-foto.jpg" alt="Stanza" class="w-full h-36 object-cover rounded-[16px]">
+                        <img src="https://static.vecteezy.com/ti/foto-gratuito/p2/3023862-vista-in-volo-dalla-finestra-con-sfondo-tramonto-sbalorditivo-gratuito-foto.jpg" alt="Room" class="w-full h-36 object-cover rounded-[16px]">
                         <button class="absolute top-3 right-3 text-gray-700 hover:text-red-500 transition">
                             <i class="fa-regular fa-heart"></i>
                         </button>
@@ -136,7 +130,7 @@
                         </div>
                         
                         <p class="text-[10px] text-textGray leading-tight mb-3">
-                            Raggiungi mete mai viste prima approfittando delle offerte.
+                            Reach never-before-seen destinations by taking advantage of our offers.
                         </p>
 
                         <div class="border-t border-dashed border-gray-300 my-3"></div>
@@ -157,33 +151,33 @@
             <div class="w-full lg:flex-1 flex flex-col space-y-6 mt-12 lg:mt-0">
                 
                 <div>
-                    <h2 class="text-4xl md:text-5xl font-extrabold text-textDark mb-4 tracking-tight">Perchè Scegliere Noi</h2>
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-textDark mb-4 tracking-tight">Why Choose Us</h2>
                     <p class="text-textGray font-medium leading-relaxed max-w-lg">
-                        Scopri Una Piattaforma Pensata Per Rendere Ogni Viaggio Più Semplice, Veloce E Conveniente, Con Le Migliori Offerte A Portata Di Click.
+                        Discover a platform designed to make every trip simpler, faster, and more affordable, with the best offers just a click away.
                     </p>
                 </div>
 
                 <ul class="space-y-5 py-4">
                     <li class="flex items-center space-x-4">
                         <div class="w-3.5 h-3.5 bg-brandPrimary transform rotate-45 shrink-0 rounded-[2px]"></div>
-                        <span class="font-bold text-textDark text-sm md:text-base">Confronto Rapido Delle Offerte</span>
+                        <span class="font-bold text-textDark text-sm md:text-base">Quick Offer Comparison</span>
                     </li>
                     <li class="flex items-center space-x-4">
                         <div class="w-3.5 h-3.5 bg-brandPrimary transform rotate-45 shrink-0 rounded-[2px]"></div>
-                        <span class="font-bold text-textDark text-sm md:text-base">Prezzi Competitivi E Accessibili</span>
+                        <span class="font-bold text-textDark text-sm md:text-base">Competitive and Affordable Prices</span>
                     </li>
                     <li class="flex items-center space-x-4">
                         <div class="w-3.5 h-3.5 bg-brandPrimary transform rotate-45 shrink-0 rounded-[2px]"></div>
-                        <span class="font-bold text-textDark text-sm md:text-base">Ampia Scelta Di Destinazioni Oltre I Confini</span>
+                        <span class="font-bold text-textDark text-sm md:text-base">Wide Choice of Destinations Beyond Borders</span>
                     </li>
                     <li class="flex items-center space-x-4">
                         <div class="w-3.5 h-3.5 bg-brandPrimary transform rotate-45 shrink-0 rounded-[2px]"></div>
-                        <span class="font-bold text-textDark text-sm md:text-base">Prenotazioni Sicure E Tracciate</span>
+                        <span class="font-bold text-textDark text-sm md:text-base">Secure and Tracked Bookings</span>
                     </li>
                 </ul>
 
                 <p class="text-textGray font-medium leading-relaxed max-w-lg">
-                    Prossimamente nuove funzioni, recensioni, aggiunta bagagli, pacchetti viaggio e tanto altro!
+                    Coming soon: new features, reviews, baggage addition, travel packages, and much more!
                     <i class="fa-solid fa-plane text-brandPrimary ml-1 transform -rotate-45"></i>
                 </p>
 
@@ -191,7 +185,6 @@
         </div>
     </div>
 
-    <!--Footer di fine pagina-->
     <footer id="footer" class="w-full bg-[#1A1C23] text-white pt-16 pb-8 font-sans">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             
@@ -205,7 +198,7 @@
                     </div>
                     
                     <p class="text-gray-400 text-sm leading-relaxed pr-4">
-                        Benvenuti in SkyGo. Il nostro obiettivo è rivoluzionare il modo in cui si viaggia e si acquistano voli.
+                        Welcome to SkyGo. Our goal is to revolutionize the way you travel and buy flights.
                     </p>
                     
                     <div class="flex space-x-3">
@@ -222,42 +215,42 @@
                 </div>
 
                 <div class="lg:col-span-2">
-                    <h4 class="font-bold text-white mb-6">Prodotto</h4>
+                    <h4 class="font-bold text-white mb-6">Product</h4>
                     <ul class="space-y-4">
-                        <li><a href="#" class="text-gray-400 text-sm hover:text-white transition">Chi siamo</a></li>
-                        <li><a href="#hero2" class="text-gray-400 text-sm hover:text-white transition">Ricerca voli</a></li>
+                        <li><a href="#" class="text-gray-400 text-sm hover:text-white transition">About us</a></li>
+                        <li><a href="#hero2" class="text-gray-400 text-sm hover:text-white transition">Flight search</a></li>
                     </ul>
                 </div>
 
                 <div class="lg:col-span-2">
-                    <h4 class="font-bold text-white mb-6">Supporto</h4>
+                    <h4 class="font-bold text-white mb-6">Support</h4>
                     <ul class="space-y-4">
-                        <li><a href="#" class="text-gray-400 text-sm hover:text-white transition">Contatti</a></li>
+                        <li><a href="#" class="text-gray-400 text-sm hover:text-white transition">Contact us</a></li>
                         <li><a href="#" class="text-gray-400 text-sm hover:text-white transition">Privacy Policy</a></li>
                     </ul>
                 </div>
 
                 <div class="lg:col-span-2">
-                    <h4 class="font-bold text-white mb-6">Partner</h4>
+                    <h4 class="font-bold text-white mb-6">Partners</h4>
                     <ul class="space-y-4">
-                        <li><a href="https://www.panettipitagora.edu.it/"  class="disabled text-gray-400 text-sm hover:text-white transition">Scuola</a></li>
+                        <li><a href="https://www.panettipitagora.edu.it/"  class="disabled text-gray-400 text-sm hover:text-white transition">School</a></li>
                         <li><a href="https://www.panettipitagora.edu.it/" class="text-gray-400 text-sm hover:text-white transition">ITT Panetti, BA</a></li>
                     </ul>
                 </div>
 
                 <div class="lg:col-span-3">
                     <div class="bg-[#2A2C34] rounded-2xl p-6 shadow-lg">
-                        <h4 class="font-bold text-white mb-4">Iscriviti</h4>
+                        <h4 class="font-bold text-white mb-4">Subscribe</h4>
                         
                         <div class="flex w-full mb-4">
-                            <input type="email" placeholder="Indirizzo Email" class="w-full bg-white text-gray-800 text-sm px-4 py-2.5 rounded-l-md outline-none focus:ring-2 focus:ring-brandPrimary">
+                            <input type="email" placeholder="Email Address" class="w-full bg-white text-gray-800 text-sm px-4 py-2.5 rounded-l-md outline-none focus:ring-2 focus:ring-brandPrimary">
                             <button onclick="window.location.href='pages/registra.php'" class="bg-brandPrimary hover:bg-opacity-90 transition text-white px-4 py-2.5 rounded-r-md flex items-center justify-center">
                                 <i class="fa-solid fa-arrow-right"></i>
                             </button>
                         </div>
                         
                         <p class="text-[11px] text-gray-400 leading-relaxed">
-                            Iscriviti per ricevere aggiornamenti su SkyGo e sulle nostre ultime novità.
+                            Subscribe to receive updates on SkyGo and our latest news.
                         </p>
                     </div>
                 </div>
@@ -266,7 +259,7 @@
 
             <div class="border-t border-gray-700 pt-8 flex justify-center items-center">
                 <div class="flex space-x-8 text-sm font-medium">
-                    <a href="https://www.icann.org/" class="text-white hover:text-gray-300 transition">Termini</a>
+                    <a href="https://www.icann.org/" class="text-white hover:text-gray-300 transition">Terms</a>
                     <a href="https://www.iubenda.com/privacy-policy/34539065/cookie-policy" class="text-white hover:text-gray-300 transition">Privacy</a>
                     <a href="https://www.iubenda.com/privacy-policy/34539065" class="text-white hover:text-gray-300 transition">Cookies</a>
                 </div>

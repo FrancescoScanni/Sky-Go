@@ -9,12 +9,12 @@
         exit;
     }
 
-    //info passeggero
+    //passenger info
     $sqlPasseggero = "SELECT * FROM passeggero WHERE ID=" . $_SESSION['userID'];
     $resultPasseggero = $conn->query($sqlPasseggero);
     $rowPasseggero = $resultPasseggero->fetch_assoc(); 
 
-    //info volo
+    //flight info
     $idVolo= $_SESSION['idVolo'];
     $IATAP= $_SESSION['IATAP'];
     $IATAA= $_SESSION['IATAA'] ?? '';
@@ -35,12 +35,12 @@
     $result = $conn->query($sql);
     $row=$result->fetch_assoc();
 
-    //posti d checkbox
+    //seats from checkboxes
     if($_SERVER['REQUEST_METHOD'] == "GET"){
         if(isset($_GET["posti"])){
             $posti = $_GET["posti"];
             $_SESSION['posti'] = $posti;
-            //echo "Posti selezionati: " . implode(", ", $posti);
+            //echo "Selected seats: " . implode(", ", $posti);
         }else{
             $posti = [];
         }
@@ -52,7 +52,7 @@
         }else{
             $posti=$_SESSION['posti'];
             if(empty($posti)){
-                echo "<script>alert('Selezionare almeno un posto!'); window.location.href=\"prenota.php\"</script>"; 
+                echo "<script>alert('Please select at least one seat!'); window.location.href=\"prenota.php\"</script>"; 
                 exit;
             }
             
@@ -65,26 +65,26 @@
             $prenotazione->salvaPrenotazione();
             header("Location: prenotazioni.php");
         }
-        echo "Prenotazione completata con successo!";
+        echo "Booking completed successfully!";
     }
 ?>
 
 
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sky&GO - Essenziale</title>
+    <title>Sky&GO - Checkout</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        brandPrimary: '#C48B7D', /* Il colore salmone/pesca dei bottoni */
-                        searchBg: '#F3F5F6',     /* Il grigio chiarissimo del box di ricerca */
-                        inputBg: '#E4EBEC'       /* Il grigio degli input field */
+                        brandPrimary: '#C48B7D', /* Salmon/peach button color */
+                        searchBg: '#F3F5F6',     /* Light gray search box */
+                        inputBg: '#E4EBEC'       /* Gray input fields */
                     },
                     fontFamily: {
                         sans: ['Poppins', 'sans-serif'],
@@ -102,7 +102,7 @@
             <a href="../index.php" class="hover:text-[#c88b80] cursor-pointer transition">Home</a>
             <a href="../index.php#hero2" class="hover:text-[#c88b80] cursor-pointer transition">Info</a>
             <a href="accedi.php" class="hover:text-[#c88b80] cursor-pointer transition">Logs</a>
-            <a href="../index.php#footer" class="hover:text-[#c88b80] cursor-pointer transition">Contatti</a>
+            <a href="../index.php#footer" class="hover:text-[#c88b80] cursor-pointer transition">Contact</a>
         </ul>
         <div id="logBox" class="flex items-center space-x-6 text-sm font-semibold text-gray-800">
                 <?php
@@ -118,7 +118,7 @@
     <div class="max-w-4xl mx-auto my-10 p-6 bg-white rounded-xl shadow-md flex flex-col md:flex-row gap-8">
         
         <div class="flex-1 md:border-r border-gray-200 pr-4">
-            <h2 class="text-lg font-bold mb-4 border-b pb-2">Itinerario</h2>
+            <h2 class="text-lg font-bold mb-4 border-b pb-2">Itinerary</h2>
             
             <div class="mb-6">
                 <p class="text-xs text-gray-500 font-bold tracking-wider">ID: <?php echo $idVolo; ?></p>
@@ -128,29 +128,29 @@
 
             <form action="prenota.php" method="POST">
                 <div class="mb-6">
-                    <h3 class="font-bold mb-2">Passeggeri</h3>
+                    <h3 class="font-bold mb-2">Passengers</h3>
                     <div class="flex justify-between text-sm py-1 border-b border-gray-50">
                         <span><?php echo $rowPasseggero['Nome']; ?> <?php echo $rowPasseggero['Cognome']; ?></span> 
-                        <span class="bg-gray-200 text-xs px-2 py-1 rounded"> <?php echo "Posti scelti: " . implode(", ", $posti); ?></span>
+                        <span class="bg-gray-200 text-xs px-2 py-1 rounded"> <?php echo "Selected seats: " . implode(", ", $posti); ?></span>
                     </div>
                     <div class="flex justify-between text-sm py-1">
-                        <span>Bagagli:</span> 
+                        <span>Baggage:</span> 
                         <span class="bg-gray-200 text-xs px-2 py-1 rounded"><input disabled type="number" value="0" placeholder="" name="bagagli" max="59" min="0" required></span>
                     </div>
                 </div>
             
                 <div class="bg-gray-50 p-4 rounded-lg">
-                    <div class="flex justify-between text-sm mb-1"><span>Volo</span> <span><?php $tot=$prezzo * count($posti); echo $tot; $tasse=$tot * 0.05; ?> €</span></div>
-                    <div class="flex justify-between text-sm mb-1"><span>Tasse</span> <span><?php if($prezzo>0 && count($posti)>0){ echo number_format($tasse, 2);
-                                                                                                    }else{ echo "0.00"; } ?> €</span></div>
+                    <div class="flex justify-between text-sm mb-1"><span>Flight</span> <span><?php $tot=$prezzo * count($posti); echo $tot; $tasse=$tot * 0.05; ?> €</span></div>
+                    <div class="flex justify-between text-sm mb-1"><span>Taxes</span> <span><?php if($prezzo>0 && count($posti)>0){ echo number_format($tasse, 2);
+                                                                                                        }else{ echo "0.00"; } ?> €</span></div>
                     <div class="flex justify-between font-bold border-t border-gray-300 mt-2 pt-2 text-lg">
-                        <span>Totale</span> <span class="text-orange-500"><?php if($prezzo>0 && count($posti)>0){ echo number_format(($prezzo * count($posti)) + $tasse, 2);
-                                                                                                    }else{ echo "0.00"; } ?> €</span>
+                        <span>Total</span> <span class="text-orange-500"><?php if($prezzo>0 && count($posti)>0){ echo number_format(($prezzo * count($posti)) + $tasse, 2);
+                                                                                                        }else{ echo "0.00"; } ?> €</span>
                     </div>
                 </div>
 
                 <div class="flex justify-center mt-6">
-                    <input type="submit" value="Prenota ora" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 font-semibold">
+                    <input type="submit" value="Book now" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 font-semibold">
                     </input>
                 </div>
             </form>
@@ -158,7 +158,7 @@
 
 
         <form action="prenota.php" method="GET" class="flex-1">
-            <h2 class="text-lg font-bold mb-6 text-center">Scegli il posto</h2>
+            <h2 class="text-lg font-bold mb-6 text-center">Choose your seat</h2>
             <div class="flex flex-col gap-2 items-center mt-4">
                 <?php 
                 $numero_posto = 0;
@@ -221,18 +221,18 @@
 
             <div class="flex justify-center gap-4 mt-8 text-xs text-gray-600">
                 <span class="flex items-center gap-2">
-                    <div class="w-4 h-4 bg-gray-100 border border-gray-300 rounded-sm"></div> Libero
+                    <div class="w-4 h-4 bg-gray-100 border border-gray-300 rounded-sm"></div> Available
                 </span>
                 <span class="flex items-center gap-2">
-                    <div class="w-4 h-4 bg-gray-300 rounded-sm"></div> Occupato
+                    <div class="w-4 h-4 bg-gray-300 rounded-sm"></div> Occupied
                 </span>
                 <span class="flex items-center gap-2">
-                    <div class="w-4 h-4 bg-orange-400 rounded-sm"></div> Scelto
+                    <div class="w-4 h-4 bg-orange-400 rounded-sm"></div> Selected
                 </span>
             </div>
 
             <div class="flex justify-center mt-6">
-                <input type="submit" value="Seleziona" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 font-bold transition-colors">
+                <input type="submit" value="Select" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 font-bold transition-colors">
                 </input>
             </div>
         </form>

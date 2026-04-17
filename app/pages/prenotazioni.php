@@ -10,20 +10,20 @@
 
 
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sky&GO - Le tue prenotazioni</title>
+  <title>Sky&GO - Your Bookings</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        brandPrimary: '#C48B7D', /* Il colore salmone/pesca dei bottoni */
-                        searchBg: '#F3F5F6',     /* Il grigio chiarissimo del box di ricerca */
-                        inputBg: '#E4EBEC'       /* Il grigio degli input field */
+                        brandPrimary: '#C48B7D', /* Salmon/peach button color */
+                        searchBg: '#F3F5F6',     /* Light gray search box */
+                        inputBg: '#E4EBEC'       /* Gray input fields */
                     },
                     fontFamily: {
                         sans: ['Poppins', 'sans-serif'],
@@ -41,7 +41,7 @@
             <a href="../index.php" class="hover:text-[#c88b80] cursor-pointer transition">Home</a>
             <a href="../index.php#hero2" class="hover:text-[#c88b80] cursor-pointer transition">Info</a>
             <a href="accedi.php" class="hover:text-[#c88b80] cursor-pointer transition">Logs</a>
-            <a href="../index.php#footer" class="hover:text-[#c88b80] cursor-pointer transition">Contatti</a>
+            <a href="../index.php#footer" class="hover:text-[#c88b80] cursor-pointer transition">Contact</a>
         </ul>
         <div id="logBox" class="flex items-center space-x-6 text-sm font-semibold text-gray-800">
                 <?php
@@ -55,18 +55,18 @@
     </nav>
 
   <main class="max-w-6xl mx-auto mt-14 px-6">
-    <h1 class="text-3xl font-bold text-slate-800 mb-2">Le tue prenotazioni</h1>
-    <p class="text-gray-500 mb-10">Ecco lo storico di tutti i voli che hai prenotato.</p>
+    <h1 class="text-3xl font-bold text-slate-800 mb-2">Your Bookings</h1>
+    <p class="text-gray-500 mb-10">Here is the history of all the flights you have booked.</p>
 
     <div class="w-[65vw] bg-white rounded-3xl shadow-[0_4px_25px_-5px_rgba(0,0,0,0.05)] overflow-hidden">
       <table class="w-[80vw] text-left border-collapse">
         
         <thead>
           <tr class="text-xs text-gray-500 uppercase tracking-wider border-b border-gray-100 bg-white">
-            <th class="px-8 py-6 font-semibold">Data Prenotazione</th>
-            <th class="px-8 py-6 font-semibold">Codice Volo</th>
-            <th class="px-8 py-6 font-semibold">Posto</th>
-            <th class="px-8 py-6 font-semibold">Bagaglio</th>
+            <th class="px-8 py-6 font-semibold">Booking Date</th>
+            <th class="px-8 py-6 font-semibold">Flight Code</th>
+            <th class="px-8 py-6 font-semibold">Seat</th>
+            <th class="px-8 py-6 font-semibold">Baggage</th>
           </tr>
         </thead>
         
@@ -85,7 +85,7 @@
                         echo '</tr>';
                     }
                 } else {
-                    echo '<tr><td colspan="6" class="px-8 py-12 text-center text-gray-400 italic">Nessuna prenotazione trovata.</td></tr>';
+                    echo '<tr><td colspan="6" class="px-8 py-12 text-center text-gray-400 italic">No bookings found.</td></tr>';
                 }
             
             ?>

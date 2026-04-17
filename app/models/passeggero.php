@@ -15,7 +15,7 @@
         private $password;
 
 
-        //cOSTRUTTORE PROFILO PASSEGGERO
+        // PASSENGER PROFILE CONSTRUCTOR
         public function __construct($nome, $cognome, $mail, $telefono, $data, $genere, $password) {
             $this->nome = $nome;
             $this->cognome = $cognome;
@@ -26,16 +26,19 @@
             $this->password = password_hash($password, PASSWORD_DEFAULT);         
         }
 
-        //salvataggio
+        // Save passenger to database
         public function salva(){
             global $conn, $registrazioneSuccesso, $giaPresente;
             $sql = "INSERT INTO passeggero (nome, cognome, genere, telefono, mail, data, password)
                     VALUES ('$this->nome', '$this->cognome', '$this->genere', $this->telefono, '$this->mail', '$this->data', '$this->password')";
-            $sqlEsiste="SELECT * FROM passeggero WHERE mail='$this->mail'"; //controllo se è già presente
+            
+            // Check if user already exists
+            $sqlEsiste="SELECT * FROM passeggero WHERE mail='$this->mail'"; 
             $esiste=$conn->query($sqlEsiste);
+            
             if ($esiste->num_rows==0) {
                 $conn->query($sql);
-                echo $registrazioneSuccesso;
+                echo $registrazioneSuccesso; // Defined in generalFunctions.php
                 return true; 
             }
             else {
@@ -43,15 +46,16 @@
             }
         } 
 
-        //funzione richiamat SU accedi
+        // Authentication function used in login page
         public static function logga($mail, $password){
             global $conn, $loginFallito;
             $sql = "SELECT * FROM passeggero WHERE Mail='$mail'";
             $output = $conn->query($sql);
-            if($output->num_rows >0){
+            
+            if($output->num_rows > 0){
                 $row=$output->fetch_assoc();
-                //echo $row["Password"];
-                //echo $password;
+                
+                // Verify hashed password
                 if(password_verify($password, $row["Password"])){
                     $_SESSION['loggato']=true;
                     $_SESSION['userID']=$row['ID'];
@@ -62,7 +66,7 @@
             }
         }
 
-        //logout utente
+        // User logout
         public static function logout(){
             session_destroy();
         }

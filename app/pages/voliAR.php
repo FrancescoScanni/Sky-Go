@@ -22,7 +22,7 @@
         }
         //ARRIVO
         if (!preg_match('/^[a-zA-Z]+$/', $_POST["IATAA"])) {
-            $arrivoErr = "*Inserisci un aeroporto di arrivo. ";
+            $arrivoErr = "*Please enter an arrival airport. ";
             $err = true;
         } else {
             $arrivo = sanitize($_POST["IATAA"]);
@@ -43,11 +43,11 @@
     }
 ?>
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sky&GO - Risultati Ricerca</title>
+    <title>Sky&GO - Search Results</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -73,9 +73,9 @@
         <div class="text-2xl font-extrabold text-gray-700 tracking-wide">Sky&GO</div>
         <ul class="hidden md:flex space-x-8 font-semibold text-gray-600 text-sm">
             <a href="../index.php" class="hover:text-[#c88b80] cursor-pointer transition">Home</a>
-            <a href="../index.php#hero2" class="hover:text-[#c88b80] cursor-pointer transition">Info</a>
-            <a href="accedi.php" class="hover:text-[#c88b80] cursor-pointer transition">Logs</a>
-            <a href="../index.php#footer" class="hover:text-[#c88b80] cursor-pointer transition">Contatti</a>
+            <a href="../index.php#hero2" class="hover:text-[#c88b80] cursor-pointer transition">About</a>
+            <a href="accedi.php" class="hover:text-[#c88b80] cursor-pointer transition">Login</a>
+            <a href="../index.php#footer" class="hover:text-[#c88b80] cursor-pointer transition">Contact</a>
         </ul>
         <div id="logBox" class="flex items-center space-x-6 text-sm font-semibold text-gray-800">
                 <?php
@@ -89,20 +89,20 @@
     </nav>
     <div class="max-w-6xl mx-auto mt-12 mb-20 px-4">
         <div class="mb-8">
-            <h1 class="text-3xl font-bold text-gray-800">Risultati della tua ricerca</h1>
-            <p class="text-gray-500 mt-2">Ecco i voli disponibili per le date selezionate.</p>
+            <h1 class="text-3xl font-bold text-gray-800">Your Search Results</h1>
+            <p class="text-gray-500 mt-2">Here are the available flights for your selected dates.</p>
         </div>
         <div class="bg-white shadow-lg rounded-3xl overflow-hidden border border-gray-100">
             <div class="overflow-x-auto">
                 <table class="w-full text-left border-collapse">
                     <thead>
                         <tr class="bg-gray-50 text-gray-500 text-sm uppercase tracking-wider">
-                            <th class="py-4 px-6 font-semibold">Codice Volo</th>
-                            <th class="py-4 px-6 font-semibold">Andata</th>
-                            <th class="py-4 px-6 font-semibold">Ritorno</th>
-                            <th class="py-4 px-6 font-semibold">Data</th>
-                            <th class="py-4 px-6 font-semibold">Prezzo</th>
-                            <th class="py-4 px-6 font-semibold text-center">Azione</th>
+                            <th class="py-4 px-6 font-semibold">Flight Code</th>
+                            <th class="py-4 px-6 font-semibold">Outbound</th>
+                            <th class="py-4 px-6 font-semibold">Return</th>
+                            <th class="py-4 px-6 font-semibold">Date</th>
+                            <th class="py-4 px-6 font-semibold">Price</th>
+                            <th class="py-4 px-6 font-semibold text-center">Action</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-gray-100">
@@ -156,14 +156,14 @@
                                 echo '  </td>';
                                 
                                 echo '  <td class="py-4 px-6 text-sm text-gray-600">';
-                                echo '      <div class="mb-1"><span class="font-bold text-gray-500">A:</span> ' . $dataAndataStr . '</div>';
-                                echo '      <div><span class="font-bold text-gray-500">R:</span> ' . $dataRitornoStr . '</div>';
+                                echo '      <div class="mb-1"><span class="font-bold text-gray-500">Out:</span> ' . $dataAndataStr . '</div>';
+                                echo '      <div><span class="font-bold text-gray-500">Ret:</span> ' . $dataRitornoStr . '</div>';
                                 echo '  </td>';
 
                                 echo '  <td class="py-4 px-6 font-semibold text-gray-900">€' . $volo["total_amount"] . '</td>';
                                 
                                 echo '  <td class="py-4 px-6 text-center">';
-                                echo '      <a href="prenota.php" class="bg-[#c88b80] hover:bg-[#b0786d] text-white px-4 py-2 rounded-lg font-semibold text-sm transition shadow-md">Prenota</a>';
+                                echo '      <a href="prenota.php" class="bg-[#c88b80] hover:bg-[#b0786d] text-white px-4 py-2 rounded-lg font-semibold text-sm transition shadow-md">Book</a>';
                                 echo '  </td>';
                                 echo '</tr>';
 
